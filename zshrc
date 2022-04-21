@@ -169,3 +169,6 @@ alias scihub='open https://sci-hub.hkvisa.net'
 alias wolfram='open https://www.wolframalpha.com'
 alias getbib='open https://scholar.google.com'
 alias wpd='open https://apps.automeris.io/wpd/'
+
+setopt +o nomatch
+function ?() { echo "$*" | bc ; } 
