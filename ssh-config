@@ -1,0 +1,24 @@
+Host *
+  ServerAliveInterval 300
+  ServerAliveCountMax 2
+  TCPKeepAlive=no
+  ForwardX11 yes
+
+Host graham
+  HostName graham.computecanada.ca
+  User tapas
+
+Host cedar
+  HostName cedar.computecanada.ca
+  ProxyCommand ssh -X graham -W %h:%p
+  User tapas
+
+Host nlogn
+  HostName nlogn.uwaterloo.ca
+  ProxyCommand ssh -X graham -W %h:%p
+  User tapas
+
+Host feynman
+  HostName feynman.uwaterloo.ca
+  ProxyCommand ssh -X nlogn -W %h:%p
+  User tapas
