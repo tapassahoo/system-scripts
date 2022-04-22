@@ -3,6 +3,7 @@ Host *
   ServerAliveCountMax 2
   TCPKeepAlive=no
   ForwardX11 yes
+  XAuthLocation /opt/X11/bin/xauth
 
 Host graham
   HostName graham.computecanada.ca
