@@ -18,4 +18,7 @@ cp ~/.gitignore /Users/tsahoo/academic-project/system-scripts/gitignore
 cd /Users/tsahoo/academic-project/system-scripts/
 #git remote set-url origin https://github.com/tapassahoo/system-scripts.git
 
-git add . && git commit -m "update ${date}" && git push
+d=$(date +%Y-%m-%d)
+message="update on ""$d"
+echo "$message"
+git add . && git commit -m "$message" && git push
