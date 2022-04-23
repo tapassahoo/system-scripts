@@ -23,4 +23,4 @@ message="update on ""$d"
 echo "$message"
 git add . 
 git commit -m "$message"
-git push
+git push -f
