@@ -12,7 +12,8 @@ cp ~/.vimrc /Users/tsahoo/academic-project/system-scripts/vimrc-script
 #cp ~/.bashrc /Users/tsahoo/academic-project/system-scripts/bashrc
 cp ~/.bash_profile /Users/tsahoo/academic-project/system-scripts/bash_profile
 cp ~/.zshrc /Users/tsahoo/academic-project/system-scripts/zshrc
-cp ~/.zprofile /Users/tsahoo/academic-project/system-scripts/zprofile
+cp ~/.taskrc /Users/tsahoo/academic-project/system-scripts/zshrc
+#cp ~/.zprofile /Users/tsahoo/academic-project/system-scripts/zprofile
 cp ~/.gitignore /Users/tsahoo/academic-project/system-scripts/gitignore
 
 cd /Users/tsahoo/academic-project/system-scripts/

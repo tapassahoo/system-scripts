@@ -209,9 +209,6 @@ function CloseTest()
   endif
 endfunction
 
-
-set rtp+=/usr/local/opt/fzf
-
 " Set vim color
 
 " set your color scheme (replace wombat with whatever yours is called)
@@ -270,7 +267,10 @@ set ttimeoutlen=1
 set ttyfast
 
 set mousemodel=popup
-
-set guifont=DejaVu\ Sans\ Mono\ 14\ cANSI
-
 set guifont=Monaco:h12
+
+augroup vimrc-incsearch-highlight
+  autocmd!
+  autocmd CmdlineEnter /,\? :set hlsearch
+  autocmd CmdlineLeave /,\? :set nohlsearch
+augroup END
