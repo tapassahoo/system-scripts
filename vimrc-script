@@ -214,6 +214,7 @@ endfunction
 " set your color scheme (replace wombat with whatever yours is called)
 " if you're using a gvim or macvim, then your color scheme may have a version
 " that uses more than 256 colors
+set background=light
 if has("gui_running")
     colorscheme default
 elseif &t_Co == 256
@@ -269,8 +270,4 @@ set ttyfast
 set mousemodel=popup
 set guifont=Monaco:h12
 
-augroup vimrc-incsearch-highlight
-  autocmd!
-  autocmd CmdlineEnter /,\? :set hlsearch
-  autocmd CmdlineLeave /,\? :set nohlsearch
-augroup END
+hi VimwikiLink term=underline ctermfg=cyan guifg=cyan gui=underline
