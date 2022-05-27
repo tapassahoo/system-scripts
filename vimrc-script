@@ -230,30 +230,14 @@ let g:searchhi_update_all_autocmds = 'InsertLeave'
 
 " color for searching
 set hlsearch
-hi Search ctermbg=LightYellow
+hi Search ctermbg=Yellow
 hi Search ctermfg=Black
 
 " color for visual mode
 highlight Visual cterm=bold ctermbg=lightYellow ctermfg=darkblue
 
-
-" Highlight cursor line underneath the cursor horizontally.
-" set cursorline
-
-" set cursorline
-" hi cursorline cterm=none ctermbg=black guibg=grey
-
-" Highlight cursor line underneath the cursor vertically.
-" set cursorcolumn
-
-
-" Highlight cursor line underneath the cursor horizontally.
-" set cursorline
-"autocmd InsertEnter * highlight CursorLine guifg=white guibg=blue ctermfg=yellow ctermbg=blue
-"autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=yellow ctermbg=darkblue
-
-" Highlight cursor line underneath the cursor vertically.
-"set cursorcolumn
+set cursorline
+hi cursorline cterm=none ctermbg=Black guibg=grey
 
 " for spell checking
 hi clear SpellBad
@@ -271,3 +255,38 @@ set mousemodel=popup
 set guifont=Monaco:h12
 
 hi VimwikiLink term=underline ctermfg=cyan guifg=cyan gui=underline
+
+command! Diary VimwikiDiaryIndex
+augroup vimwikigroup
+    autocmd!
+    " automatically update links on read diary
+    autocmd BufRead,BufNewFile diary.wiki VimwikiDiaryGenerateLinks
+augroup end
+
+
+func! WordProcessorMode()
+    " Load Markdown syntax highlighting but with custom hashtag support
+    set filetype=mkd
+    syn match htmlBoldItalic "#[-_a-zA-Z0-9]\+"
+
+    " Other options
+    set nonumber
+    set wrap
+    set linebreak
+    set breakat=\ 
+    set display=lastline
+    set formatoptions=
+    set spell spelllang=en_gb
+    source ~/.vim/abbreviations.vim
+
+    " Auto-capitalize script
+    augroup SENTENCES
+        au!
+        autocmd InsertCharPre * if search('\v(%^|[.!?]\_s+|\_^\-\s|\_^title\:\s|\n\n)%#', 'bcnw') != 0 | let v:char = toupper(v:char) | endif
+    augroup END
+endfu
+
+com! WP call WordProcessorMode()
+au BufNewFile,BufRead *.mkd call WordProcessorMode()
+au BufNewFile,BufRead *.md call WordProcessorMode()
+au BufNewFile,BufRead diary-*.txt call WordProcessorMode()
