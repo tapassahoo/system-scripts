@@ -236,8 +236,8 @@ hi Search ctermfg=Black
 " color for visual mode
 highlight Visual cterm=bold ctermbg=lightYellow ctermfg=darkblue
 
-set cursorline
-hi cursorline cterm=none ctermbg=Black guibg=grey
+" set cursorline
+" hi cursorline cterm=none ctermbg=Black guibg=grey
 
 " for spell checking
 hi clear SpellBad
