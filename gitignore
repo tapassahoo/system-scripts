@@ -55,4 +55,5 @@ password*
 *.nav
 *.snm
 *.lyx~
+*.lyx#
 *.emergency1.lyx
