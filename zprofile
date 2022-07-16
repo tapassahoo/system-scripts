@@ -304,30 +304,3 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
-# export correct paths
-export PATH=/Users/tsahoo/Library/Python/3.8/bin:$PATH
-export PATH=/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH
-export PATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
-export PATH=/usr/local/opt/python@3.9/libexec/bin:$PATH
-export PATH=/Library/TeX/texbin/:$PATH
-export PYTHONPATH="$HOME/codes/exact-diagonalization:$HOME/codes/MoRiBS-PIGS/mypkg:$PYTHONPATH"
-
-# Activate the plugins
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# My aliases
-alias python='/usr/local/bin/python3'
-alias pyenv='source ~/env/bin/activate'
-alias which='which-command'
-alias g++='g++-11'
-alias nlogn='ssh -X nlogn'
-alias feynman='ssh -X feynman'
-alias graham='ssh -X graham'
-alias cedar='ssh -X cedar'
-alias shutdown='sudo shutdown -h now'
-alias restart='sudo shutdown -r now'
-
-
-export LC_CTYPE="en_US.UTF-8"
