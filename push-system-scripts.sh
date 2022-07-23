@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/bash -x
 rsync -r /usr/local/bin/pull-data-from-graham.sh ~/academic-project/system-scripts/ 
 rsync -r /usr/local/bin/pull-data-from-cedar.sh ~/academic-project/system-scripts/
 rsync -r /usr/local/bin/pull-data-from-feynman.sh ~/academic-project/system-scripts/ 
