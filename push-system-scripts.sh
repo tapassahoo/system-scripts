@@ -15,4 +15,4 @@ rsync -r ~/.gitignore ~/academic-project/system-scripts/gitignore-macos
 cd ~/academic-project/system-scripts/
 git add .
 git commit -m "Updated on $(date +"%d-%m-%Y")"
-git push origin master
+git push -f
