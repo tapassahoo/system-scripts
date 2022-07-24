@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 rsync -r /usr/local/bin/pull-data-from-graham.sh ~/academic-project/system-scripts/ 
 rsync -r /usr/local/bin/pull-data-from-cedar.sh ~/academic-project/system-scripts/
 rsync -r /usr/local/bin/pull-data-from-feynman.sh ~/academic-project/system-scripts/ 
@@ -13,7 +13,6 @@ rsync -r ~/.zprofile ~/academic-project/system-scripts/zprofile-macos
 rsync -r ~/.gitignore ~/academic-project/system-scripts/gitignore-macos
 
 cd ~/academic-project/system-scripts/
-SHELL=/bin/bash
 git add .
 git commit -m "Updated on $(date +"%d-%m-%Y")"
-git push
+git push https://github.com/tapassahoo/System-Scripts.git
