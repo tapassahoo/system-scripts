@@ -16,4 +16,5 @@ cd ~/academic-project/system-scripts/
 SHELL=/bin/bash
 git add .
 git commit -m "Updated on $(date +"%d-%m-%Y")"
+git remote set-url origin https://github.com/tapassahoo/System-Scripts.git
 git push
