@@ -14,4 +14,4 @@ rsync -r ~/.gitignore ~/academic-project/system-scripts/gitignore-macos
 
 cd ~/academic-project/system-scripts/
 git commit -am "Updated on $(date +"%d-%m-%Y")"
-git push https://github.com/tapassahoo/System-Scripts.git
+git push https://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@github.com/tapassahoo/System-Scripts.git
