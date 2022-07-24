@@ -12,5 +12,4 @@ rsync -r ~/.zshrc ~/academic-project/system-scripts/zshrc-macos
 rsync -r ~/.zprofile ~/academic-project/system-scripts/zprofile-macos
 rsync -r ~/.gitignore ~/academic-project/system-scripts/gitignore-macos
 
-SHELL=/bin/bash
 cd ~/academic-project/system-scripts/; acp
