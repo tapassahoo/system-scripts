@@ -12,4 +12,8 @@ rsync -r ~/.zshrc ~/academic-project/system-scripts/zshrc-macos
 rsync -r ~/.zprofile ~/academic-project/system-scripts/zprofile-macos
 rsync -r ~/.gitignore ~/academic-project/system-scripts/gitignore-macos
 
-cd ~/academic-project/system-scripts/; acp
+cd ~/academic-project/system-scripts/
+SHELL=/bin/bash
+git add .
+git commit -m "Updated on $(date +"%d-%m-%Y")"
+git push
