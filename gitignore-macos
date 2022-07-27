@@ -34,10 +34,6 @@ Results-p-H2O/
 *.aux
 *.out
 password*
-*.pdf
-!talk-tapas-sahoo.pdf
-!cv-tapas-sahoo.pdf
-!list-of-publications-tapas-sahoo.pdf
 *.log
 *.blg
 *.bbl
