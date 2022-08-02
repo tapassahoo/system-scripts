@@ -122,6 +122,7 @@ function acp() {
   git commit -m "Updated on $(date +"%d-%m-%Y")"
   git push
 }
+export -f acp
 
 export EDITOR=vim
 export VISUAL="$EDITOR"
