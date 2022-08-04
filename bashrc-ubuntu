@@ -170,6 +170,16 @@ function checkvpn () {
 	sudo /sbin/ifconfig|grep tun0
 }
 
+function mntgraham () {
+	sshfs graham:/home/tapas/MoRiBS-PIGS/ /home/tapassahoo/mountpoint-graham/ -o reconnect
+}
+export -f mntgraham
+
+function umntgraham () {
+	umount /home/tapassahoo/mountpoint-graham
+}
+export -f umntgraham
+
 # My aliases
 alias nlogn='ssh -X nlogn'
 alias feynman='ssh -X feynman'
