@@ -139,7 +139,7 @@ alias wpd='xdg-open https://apps.automeris.io/wpd/'
 alias taskwarrior='xdg-open https://ostechnix.com/taskwarrior-command-line-todo-task-manager-application/'
 alias manuscript='xdg-open https://jcp.peerx-press.org/cgi-bin/main.plex\?form_type\=dt_folder\&j_id\=62\&ms_id_key\=855ftdX7F74OysE1Q42h2iePVjlQ\&ft_key\=tLg1HHWYwHbAJtWeiHSQJw\&ndt\=AC0A7AZ\&stage\=dat_post_decision_ms'
 alias bhsm='xdg-open https://bhsmcampuscare.in'
-alias vw='xdg-open file:~/vimwiki_html/index.html'
+alias viki='xdg-open ~/vimwiki_html/index.html'
 
 function compresspdf () {
     echo 'Usage: compresspdf [input file] [output file] [screen|ebook|printer|prepress]'
