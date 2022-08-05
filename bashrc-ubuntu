@@ -117,9 +117,9 @@ if ! shopt -oq posix; then
 fi
 
 
-function acp() {
+function acp () {
   git add .
-  git commit -m "Updated on $(date +"%d-%m-%Y")"
+  git commit -m "graham:Modified on $(date +"%d-%m-%Y")"
   git push
 }
 export -f acp
