@@ -158,7 +158,7 @@ function open () {
 export -f open
 
 function startvpn () {
-	sudo openvpn --config /root/vpn/user11.ovpn --auth-user-pass ~/Documents/backup/openvpn/pass.txt --auth-retry interact --askpass ~/Documents/backup/openvpn/pass1.txt >> /dev/null 2>&1 &
+	sudo openvpn --config /root/vpn/user11.ovpn --auth-user-pass ~/Documents/backup/passcode-vpn/user-password.txt --auth-retry interact --askpass ~/Documents/backup/passcode-vpn/auth-key.txt >> /dev/null 2>&1 &
 }
 export -f startvpn
 
@@ -190,6 +190,7 @@ alias shutdown='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
 
 ? () { echo "$*" | bc ; }
+export -f ?
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
