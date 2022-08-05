@@ -122,11 +122,13 @@ plugins=(
 
 plugins=(z zsh-autosuggestions)
 
-function acp() {
+function acp () {
   git add .
-  git commit -m "Updated on $(date +"%d-%m-%Y")"
+  os=`uname`
+  git commit -m "$os:Updated on $(date +"%d-%m-%Y")"
   git push
 }
+export acp
 
 # Activate the plugins
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -170,10 +172,11 @@ alias wpd='open https://apps.automeris.io/wpd/'
 alias taskwarrior='open https://ostechnix.com/taskwarrior-command-line-todo-task-manager-application/'
 alias manuscript='open https://jcp.peerx-press.org/cgi-bin/main.plex\?form_type\=dt_folder\&j_id\=62\&ms_id_key\=855ftdX7F74OysE1Q42h2iePVjlQ\&ft_key\=tLg1HHWYwHbAJtWeiHSQJw\&ndt\=AC0A7AZ\&stage\=dat_post_decision_ms'
 alias bhsm='open https://bhsmcampuscare.in'
-alias vw='open file:///Users/tsahoo/vimwiki_html/index.html'
+alias viki='open file:///Users/tsahoo/vimwiki_html/index.html'
 
 setopt +o nomatch
-function ?() { echo "$*" | bc ; } 
+function ? () { echo "$*" | bc ; } 
+export ?
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -186,13 +189,15 @@ export PYTHONPATH="$HOME/academic-project/MoRiBS-PIGS/:$PYTHONPATH"
 
 # My aliases
 alias which='which-command'
-alias nlogn='ssh -X nlogn'
-alias feynman='ssh -X feynman'
-alias graham='ssh -X graham'
-alias cedar='ssh -X cedar'
-alias snbncbs='ssh -X snbncbs'
+alias sshnlogn='ssh -X nlogn'
+alias sshfeynman='ssh -X feynman'
+alias sshgraham='ssh -X graham'
+alias sshcedar='ssh -X cedar'
+alias sshsnbncbs='ssh -X snbncbs'
 alias shutdown='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
+alias g++='/usr/local/bin/g++'
+alias gcc='/usr/local/bin/gcc'
 
 
 export LC_CTYPE="en_US.UTF-8"
