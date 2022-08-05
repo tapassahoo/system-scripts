@@ -181,11 +181,11 @@ function umntgraham () {
 export -f umntgraham
 
 # My aliases
-alias nlogn='ssh -X nlogn'
-alias feynman='ssh -X feynman'
-alias graham='ssh -X graham'
-alias cedar='ssh -X cedar'
-alias snbncbs='ssh -X snbncbs'
+alias loginnlogn='ssh -X nlogn'
+alias loginfeynman='ssh -X feynman'
+alias logingraham='ssh -X graham'
+alias logincedar='ssh -X cedar'
+alias loginsnbncbs='ssh -X snbncbs'
 alias shutdown='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
 

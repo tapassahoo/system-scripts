@@ -3,9 +3,8 @@ Host *
   ServerAliveCountMax 2
   TCPKeepAlive=no
   ForwardX11 yes
-  XAuthLocation /opt/X11/bin/xauth
+  #XAuthLocation /opt/X11/bin/xauth
   IdentityFile ~/.ssh/id_rsa.pub
-  IdentityFile ~/.ssh/id_rsa
 
 Host github.com
 
@@ -19,7 +18,7 @@ Host cedar
 
 Host graham
   HostName graham.computecanada.ca
-  #ProxyCommand ssh -X cedar -W %h:%p
+  ProxyCommand ssh -X cedar -W %h:%p
   User tapas
 
 Host nlogn
