@@ -124,11 +124,9 @@ plugins=(z zsh-autosuggestions)
 
 function acp () {
   git add .
-  os=`uname`
-  git commit -m "$os:Updated on $(date +"%d-%m-%Y")"
+  git commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git push
 }
-export acp
 
 # Activate the plugins
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
