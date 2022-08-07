@@ -1,3 +1,4 @@
+#!/bin/bash
 SHELL=/bin/bash
 echo ""
 echo ""
