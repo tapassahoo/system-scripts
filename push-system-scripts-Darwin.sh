@@ -17,6 +17,7 @@ rsync -r ~/.zprofile ${HOME}/academic-project/system-scripts/zprofile-$(uname)
 rsync -r ~/.gitignore ${HOME}/academic-project/system-scripts/gitignore-$(uname)
 
 cd ${HOME}/academic-project/system-scripts/
+git pull
 git add .
 git commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
 git push -f https://github.com/tapassahoo/System-Scripts.git
