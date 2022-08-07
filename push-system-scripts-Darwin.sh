@@ -20,4 +20,5 @@ cd ${HOME}/academic-project/system-scripts/
 git pull
 git add .
 git commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-git push -f https://github.com/tapassahoo/System-Scripts.git
+git push -f 
+#https://github.com/tapassahoo/System-Scripts.git
