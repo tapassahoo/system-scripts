@@ -1,4 +1,4 @@
-#!/bin/bash
+SHELL=/bin/bash
 echo ""
 echo ""
 echo "CRON:" `date`
