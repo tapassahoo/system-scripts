@@ -4,7 +4,7 @@ Host *
   TCPKeepAlive=no
   ForwardX11 yes
   #XAuthLocation /opt/X11/bin/xauth
-  IdentityFile ~/.ssh/id_rsa.pub
+  #IdentityFile ~/.ssh/id_rsa.pub
 
 Host github.com
 
