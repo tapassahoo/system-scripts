@@ -13,4 +13,5 @@ cp -r /usr/local/bin/push-system-scripts.sh ${HOME}/academic-project/system-scri
 cp -r /usr/local/bin/pull-data-from-graham.sh ${HOME}/academic-project/system-scripts/pull-data-from-graham-$(uname).sh
 
 cd ${HOME}/academic-project/system-scripts/
-git pull && git add . && git commit -m "$(uname): Updated on $(date +"%d-%m-%Y")" && git push https://github.com/tapassahoo/System-Scripts.git 
+git pull && git add . && git commit -m "$(uname): Updated on $(date +"%d-%m-%Y")" && git push -f
+#https://github.com/tapassahoo/System-Scripts.git 
