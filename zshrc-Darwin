@@ -169,8 +169,8 @@ alias bhsm='open https://bhsmcampuscare.in'
 alias viki='open file:///Users/tsahoo/vimwiki_html/index.html'
 
 setopt +o nomatch
-function ? () { echo "$*" | bc ; } 
-export ?
+function calc () { echo "$*" | bc ; } 
+export calc
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -218,6 +218,25 @@ compresspdf () {
 
 cpdf () { 
   gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="$1" "${@:2}"
+}
+
+function pdfextractor () {
+	gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage="${1}" -dLastPage="${2}" -sOutputFile="${3%.pdf}_p${1}-p${2}.pdf" "${3}"
+}
+export pdfextractor
+
+function pdfpextr ()
+{
+    # this function uses 3 arguments:
+    #     $1 is the first page of the range to extract
+    #     $2 is the last page of the range to extract
+    #     $3 is the input file
+    #     output file will be named "inputfile_pXX-pYY.pdf"
+    gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER \
+       -dFirstPage=${1} \
+       -dLastPage=${2} \
+       -sOutputFile=${3%.pdf}_p${1}-p${2}.pdf \
+       ${3}
 }
 
 source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
