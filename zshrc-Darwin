@@ -199,6 +199,7 @@ alias shutdown='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
 alias g++='/usr/local/bin/g++'
 alias gcc='/usr/local/bin/gcc'
+alias iCloudBackup='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
 
 
 export LC_CTYPE="en_US.UTF-8"
