@@ -238,6 +238,10 @@ compresspdf () {
     gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="$2" "$1"
 }
 
+compressjpeg () {
+	jpegoptim --size=95k "${1}" --overwrite 
+}
+
 cpdf () { 
   gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="$1" "${@:2}"
 }
