@@ -290,3 +290,11 @@ com! WP call WordProcessorMode()
 au BufNewFile,BufRead *.mkd call WordProcessorMode()
 au BufNewFile,BufRead *.md call WordProcessorMode()
 au BufNewFile,BufRead diary-*.txt call WordProcessorMode()
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!vert ter; clear; python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!vert ter; clear; python3' shellescape(@%, 1)<CR>
+
+" show the matching part of the pair for [] {} and ()
+set showmatch
+
+" enable all Python syntax highlighting features
+let python_highlight_all = 1
