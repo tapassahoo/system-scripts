@@ -4,7 +4,7 @@ echo ""
 echo "CRON:" `date`
 set -xv
 #===============================================================
-cp ~/.bashrc ${HOME}/academic-project/system-scripts/bashrc-$(uname)
+cp ~/.zshrc ${HOME}/academic-project/system-scripts/zshrc-$(uname)
 cp ~/.vimrc  ${HOME}/academic-project/system-scripts/vimrc-$(uname)
 cp ~/.gitignore  ${HOME}/academic-project/system-scripts/gitignore-$(uname)
 cp ~/.ssh/config ${HOME}/academic-project/system-scripts/ssh-config-$(uname)
