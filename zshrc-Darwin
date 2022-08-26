@@ -109,8 +109,6 @@ source $ZSH/oh-my-zsh.sh
 #
 
 plugins=(
-  git
-  python
   bundler
   dotenv
   macos
@@ -121,6 +119,13 @@ plugins=(
 )
 
 plugins=(
+	git 
+	colored-man-pages 
+	colorize 
+	pip 
+	python 
+	brew
+	git
 	z
     zsh-autosuggestions
 	zsh-syntax-highlighting
@@ -283,3 +288,17 @@ if [ -x "$(command -v exa)" ]; then
 fi
 
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fd - cd to selected directory
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+fh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
