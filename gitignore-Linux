@@ -52,3 +52,4 @@ password*
 *.lyx~
 *.lyx#
 *.emergency1.lyx
+*.bib.sav.tmp
