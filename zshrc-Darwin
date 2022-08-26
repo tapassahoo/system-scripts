@@ -120,6 +120,7 @@ plugins=(
 
 plugins=(
 	git 
+	last-working-dir 
 	colored-man-pages 
 	colorize 
 	pip 
