@@ -109,16 +109,6 @@ source $ZSH/oh-my-zsh.sh
 #
 
 plugins=(
-  bundler
-  dotenv
-  macos
-  rake
-  rbenv
-  ruby
-  charm
-)
-
-plugins=(
 	git 
 	last-working-dir 
 	colored-man-pages 
@@ -127,7 +117,6 @@ plugins=(
 	python 
 	brew
 	git
-	z
     zsh-autosuggestions
 	zsh-syntax-highlighting
 	vimwiki/vimwiki
