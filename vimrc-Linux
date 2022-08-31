@@ -290,3 +290,6 @@ com! WP call WordProcessorMode()
 au BufNewFile,BufRead *.mkd call WordProcessorMode()
 au BufNewFile,BufRead *.md call WordProcessorMode()
 au BufNewFile,BufRead diary-*.txt call WordProcessorMode()
+
+" format the file
+map <Leader>fm gg=G
