@@ -113,8 +113,8 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PYTHONPATH="${PYTHONPATH}:$HOME/MoRiBS-PIGS/"
-export PYTHONPATH="${PYTHONPATH}:$HOME/exact-diagonalization/"
+export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/MoRiBS-PIGS/"
+export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/exact-diagonalization/"
 
 function intel_module () {
 	source /opt/intel/oneapi/setvars.sh intel64
