@@ -170,6 +170,11 @@ function open () {
 }
 export open
 
+function fmtpython () {
+  autopep8 --in-place --aggressive --aggressive ${1}
+}
+export fmtpython
+
 export EDITOR=vim
 export VISUAL="$EDITOR"
 
@@ -200,3 +205,6 @@ alias restart='sudo shutdown -r now'
 # alias gcc='/usr/local/bin/gcc'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="/usr/local/bin:$PATH"
+export PATH="/home/tapas/.local/bin:$PATH"
