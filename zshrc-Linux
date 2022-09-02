@@ -175,6 +175,11 @@ function fmtpython () {
 }
 export fmtpython
 
+function pyenvs () {
+  source ~/venv/bin/activate
+}
+export pyenvs
+
 export EDITOR=vim
 export VISUAL="$EDITOR"
 
