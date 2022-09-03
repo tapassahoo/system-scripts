@@ -114,6 +114,8 @@ plugins=(
 	zsh-syntax-highlighting
 	vimwiki/vimwiki
 	command-not-found
+	python
+	pip
 )
 
 function acp () {
@@ -216,9 +218,7 @@ export LDFLAGS="-L/usr/local/opt/python@3.10/lib"
 
 # For pkg-config to find python@3.10 you may need to set:
 export PKG_CONFIG_PATH="/usr/local/opt/python@3.10/lib/pkgconfig"
-alias python='/usr/local/opt/python@3.10/bin/python3'
 alias pyenvs='source ~/venv/bin/activate'
-export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 
 compresspdf () {
     echo 'Usage: compresspdf [input file] [output file] [screen|ebook|printer|prepress]'
