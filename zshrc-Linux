@@ -113,6 +113,9 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/MoRiBS-PIGS/"
+export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/exact-diagonalization/"
+
 function intel_module () {
 	source /opt/intel/oneapi/setvars.sh intel64
 }
@@ -167,6 +170,16 @@ function open () {
 }
 export open
 
+function fmtpython () {
+  autopep8 --in-place --aggressive --aggressive ${1}
+}
+export fmtpython
+
+function pyenvs () {
+  source ~/venv/bin/activate
+}
+export pyenvs
+
 export EDITOR=vim
 export VISUAL="$EDITOR"
 
@@ -197,3 +210,6 @@ alias restart='sudo shutdown -r now'
 # alias gcc='/usr/local/bin/gcc'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="/usr/local/bin:$PATH"
+export PATH="/home/tapas/.local/bin:$PATH"
