@@ -308,3 +308,8 @@ man() {
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+function j () {
+	autojump | cd ${1}
+}
+export j
