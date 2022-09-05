@@ -115,6 +115,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/MoRiBS-PIGS/"
 export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/exact-diagonalization/"
+export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/pkg_plot/"
 
 function intel_module () {
 	source /opt/intel/oneapi/setvars.sh intel64
