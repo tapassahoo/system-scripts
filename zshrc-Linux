@@ -213,3 +213,9 @@ alias restart='sudo shutdown -r now'
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="/home/tapas/.local/bin:$PATH"
+
+export CC=gcc
+export CXX=g++
+export CPP=g++
+export F77=gfortran
+export FC=gfortran
