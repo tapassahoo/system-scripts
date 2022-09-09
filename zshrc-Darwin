@@ -284,3 +284,8 @@ man() {
     command man "$@"
 }
 
+export CC=gcc
+export CXX=g++
+export CPP=g++
+export F77=gfortran
+export FC=gfortran
