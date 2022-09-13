@@ -21,6 +21,7 @@ venv
 node_modules
 .sass-cache
 
+/home/tapas/academic-project/MoRiBS-PIGS/examples/scripts/*.txt
 exact-energies-of-H2O/
 Results-p-H2O/
 **log*
