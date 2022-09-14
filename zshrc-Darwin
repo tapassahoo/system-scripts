@@ -255,6 +255,7 @@ function pdfpextr ()
 source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 
+export PATH=/usr/local/bin:$PATH
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
@@ -284,8 +285,8 @@ man() {
     command man "$@"
 }
 
-export CC=gcc
-export CXX=g++
-export CPP=g++
+export CC=/usr/local/bin/gcc-12
+export CXX=/usr/local/bin/g++-12
+export CPP=/usr/local/bin/g++-12
 export F77=gfortran
 export FC=gfortran
