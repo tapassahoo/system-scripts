@@ -1,6 +1,6 @@
 Host *
-  ServerAliveInterval 300
-  ServerAliveCountMax 2
+  ServerAliveInterval 30
+  ServerAliveCountMax 1200
   TCPKeepAlive=no
   ForwardX11 yes
   XAuthLocation /opt/X11/bin/xauth
