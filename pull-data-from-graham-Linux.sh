@@ -15,3 +15,4 @@ set -xv
 #rsync -avze ssh graham:/scratch/tapas/nonlinear-rotors/PIGS-qTIP4P-RotDOFs-Rpt[23].[0-9]Angstrom*-beta0.1Kinv*System11-p-H2O*beads101 /Users/tsahoo/nonlinear-rotors/
 #rsync -avze ssh graham:/scratch/tapas/nonlinear-rotors/PIGS-qTIP4P-RotDOFs-Rpt[456].[05]Angstrom*-beta0.1Kinv*System11-p-H2O*beads101 /Users/tsahoo/nonlinear-rotors/
 rsync -avze ssh graham:/home/tapas/final-pigs-outputs-for-plotting/* --exclude 'core.*' ${HOME}/academic-project/outputs/final-pigs-outputs-for-plotting/
+rsync -avze ssh graham:/home/tapas/final-dmrg-outputs-for-plotting/* --exclude 'core.*' ${HOME}/academic-project/outputs/final-dmrg-outputs-for-plotting/
