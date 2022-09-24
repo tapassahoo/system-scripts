@@ -175,6 +175,7 @@ alias egrep='egrep --color=auto'
 
 export PYTHONPATH="$HOME/academic-project/exact-diagonalization:$PYTHONPATH"
 export PYTHONPATH="$HOME/academic-project/MoRiBS-PIGS/:$PYTHONPATH"
+export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/pkg_plot/"
 
 
 # Frequently used aliases
@@ -290,3 +291,7 @@ export CXX=/usr/local/bin/g++-12
 export CPP=/usr/local/bin/g++-12
 export F77=gfortran
 export FC=gfortran
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+export LDFLAGS="-L/usr/local/opt/llvm/lib/c++ -Wl,-rpath,/usr/local/opt/llvm/lib/c++"
