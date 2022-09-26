@@ -3,6 +3,7 @@ echo ""
 echo ""
 echo "CRON:" `date`
 set -xv
+rsync -avze ssh graham:/home/tapas/.bashrc --exclude 'core.*' ${HOME}/academic-project/system-scripts/bashrc-graham
 rsync -avze ssh graham:/home/tapas/final-pigs-outputs-for-plotting/* --exclude 'core.*' ${HOME}/academic-project/outputs/final-pigs-outputs-for-plotting/
 rsync -avze ssh graham:/home/tapas/final-dmrg-outputs-for-plotting/* --exclude 'core.*' ${HOME}/academic-project/outputs/final-dmrg-outputs-for-plotting/
 #

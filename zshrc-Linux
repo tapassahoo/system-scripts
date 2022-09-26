@@ -181,6 +181,52 @@ function pyenvs () {
 }
 export pyenvs
 
+function acpall () {
+  git -C ~/vimwiki add .
+  git -C ~/vimwiki commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/vimwiki push
+#
+  git -C ~/Documents/backup add .
+  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/Documents/backup push
+#
+  git -C ~/academic-project/output add .
+  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/output push
+#
+  git -C ~/academic-project/pkg_plot add .
+  git -C ~/academic-project/pkg_plot commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/pkg_plot push
+#
+  git -C ~/academic-project/scripts-for-plotting-data add .
+  git -C ~/academic-project/scripts-for-plotting-data commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/scripts-for-plotting-data push
+#
+  git -C ~/academic-writting add .
+  git -C ~/academic-writting commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-writting push
+#
+  git -C ~/academic-project/system-scripts add .
+  git -C ~/academic-project/system-scripts commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/system-scripts push
+#
+  git -C ~/academic-project/rotational-propagator-for-linear-rotor add .
+  git -C ~/academic-project/rotational-propagator-for-linear-rotor commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/rotational-propagator-for-linear-rotor push
+}
+
+function pullall () {
+  git -C ~/vimwiki pull
+  git -C ~/Documents/backup pull
+  git -C ~/academic-project/output pull
+  git -C ~/academic-project/pkg_plot pull
+  git -C ~/academic-project/scripts-for-plotting-data pull
+  git -C ~/academic-writting pull
+  git -C ~/academic-project/system-scripts pull
+  git -C ~/academic-project/rotational-propagator-for-linear-rotor pull
+}
+
+
 export EDITOR=vim
 export VISUAL="$EDITOR"
 
