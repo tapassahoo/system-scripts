@@ -182,6 +182,10 @@ function pyenvs () {
 export pyenvs
 
 function acpall () {
+	echo ""
+	echo ""
+	echo "acpall:" `date`
+	set -xv
   git -C ~/vimwiki add .
   git -C ~/vimwiki commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/vimwiki push
