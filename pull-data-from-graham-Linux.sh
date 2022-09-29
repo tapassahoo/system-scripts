@@ -4,7 +4,6 @@ echo ""
 echo "CRON:" `date`
 set -xv
 rsync -avze ssh graham:/home/tapas/.bashrc --exclude 'core.*' ${HOME}/academic-project/system-scripts/bashrc-graham
-rsync -avze ssh graham:/scratch/tapas/linear-rotors/* --exclude 'core.*' ${HOME}/academic-project/moribs-raw-output/
 rsync -avze ssh graham:/home/tapas/final-pigs-outputs-for-plotting/* --exclude 'core.*' ${HOME}/academic-project/output/final-pigs-outputs-for-plotting/
 rsync -avze ssh graham:/home/tapas/final-dmrg-outputs-for-plotting/* --exclude 'core.*' ${HOME}/academic-project/output/final-dmrg-outputs-for-plotting/
 #
