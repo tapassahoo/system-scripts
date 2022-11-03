@@ -182,45 +182,51 @@ function pyenvs () {
 export pyenvs
 
 function acpall () {
-	echo ""
-	echo ""
-	echo "acpall:" `date`
-	set -xv
+  echo "acpall:" `date`
+  echo "------------------------------------------------------"
+  echo "~/vimwiki"
   git -C ~/vimwiki add .
   git -C ~/vimwiki commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/vimwiki push
   echo "------------------------------------------------------"
 #
+  echo "~/Documents/backup"
   git -C ~/Documents/backup add .
   git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/Documents/backup push
   echo "------------------------------------------------------"
 #
+  echo "~/academic-project/output"
   git -C ~/academic-project/output add .
   git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/output push
   echo "------------------------------------------------------"
 #
+  echo "~/academic-project/pkg_plot"
   git -C ~/academic-project/pkg_plot add .
   git -C ~/academic-project/pkg_plot commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/pkg_plot push
   echo "------------------------------------------------------"
 #
+  echo "~/academic-project/scripts-for-plotting-data"
   git -C ~/academic-project/scripts-for-plotting-data add .
   git -C ~/academic-project/scripts-for-plotting-data commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/scripts-for-plotting-data push
   echo "------------------------------------------------------"
 #
+  echo "~/academic-writting"
   git -C ~/academic-writting add .
   git -C ~/academic-writting commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-writting push
   echo "------------------------------------------------------"
 #
+  echo "scripts-for-plotting-data"
   git -C ~/academic-project/system-scripts add .
   git -C ~/academic-project/system-scripts commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/system-scripts push
   echo "------------------------------------------------------"
 #
+  echo "~/academic-project/rotational-propagator-for-linear-rotor"
   git -C ~/academic-project/rotational-propagator-for-linear-rotor add .
   git -C ~/academic-project/rotational-propagator-for-linear-rotor commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/rotational-propagator-for-linear-rotor push
