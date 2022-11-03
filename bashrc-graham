@@ -340,9 +340,9 @@ export XDG_RUNTIME_DIR=/some/directory/you/specify
 export RUNLEVEL=3
 
 function acp () {
-  git add .
-  git commit -m "$(hostname): Updated on $(date +"%d-%m-%Y")"
-  git push
+  git -C ~/MoRiBS-PIGS/ add .
+  git -C ~/MoRiBS-PIGS/ commit -m "$(hostname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/MoRiBS-PIGS/ push
 }
 export -f acp
 
