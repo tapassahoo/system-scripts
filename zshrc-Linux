@@ -160,9 +160,9 @@ function pdfpextr ()
 }
 
 function acp () {
-  git add .
-  git commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git push
+  git -C "$1" add .
+  git -C "$1" commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C "$1" push
 }
 export acp
 
