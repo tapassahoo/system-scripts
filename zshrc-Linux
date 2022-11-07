@@ -120,30 +120,28 @@ export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/pkg_plot/"
 function intel_module () {
 	source /opt/intel/oneapi/setvars.sh intel64
 }
-export intel_module
 
 g16root=/home/tapas
 GAUSS_SCRDIR=/home/tapas/g16
 export g16root GAUSS_SCRDIR
 . $g16root/g16/bsd/g16.profile
 
-compresspdf () {
+function compresspdf () {
     echo 'Usage: compresspdf [input file] [output file] [screen|ebook|printer|prepress]'
     gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/${3:-"screen"} -dCompatibilityLevel=1.4 -sOutputFile="$2" "$1"
 }
 
-compressjpeg () {
+function compressjpeg () {
     jpegoptim --size=95k "${1}" --overwrite
 }
 
-cpdf () {
+function cpdf () {
   gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile="$1" "${@:2}"
 }
 
 function pdfextractor () {
     gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage="${1}" -dLastPage="${2}" -sOutputFile="${3%.pdf}_p${1}-p${2}.pdf" "${3}"
 }
-export pdfextractor
 
 function pdfpextr ()
 {
@@ -164,73 +162,78 @@ function acp () {
   git -C "$1" commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C "$1" push
 }
-export acp
 
 function open () {
   xdg-open ${1}
 }
-export open
+#export open
 
 function fmtpython () {
   autopep8 --in-place --aggressive --aggressive ${1}
 }
-export fmtpython
 
 function pyenvs () {
   source ~/venv/bin/activate
 }
-export pyenvs
 
 function acpall () {
   echo "acpall:" `date`
-  echo "------------------------------------------------------"
-  echo "~/vimwiki"
+  echo "--------------------------------------------------------------------------------"
   git -C ~/vimwiki add .
   git -C ~/vimwiki commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/vimwiki push
-  echo "------------------------------------------------------"
+  echo "The git directory is ~/vimwiki"
+  echo "--------------------------------------------------------------------------------"
 #
-  echo "~/Documents/backup"
-  git -C ~/Documents/backup add .
-  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/Documents/backup push
-  echo "------------------------------------------------------"
-#
-  echo "~/academic-project/output"
-  git -C ~/academic-project/output add .
-  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/output push
-  echo "------------------------------------------------------"
-#
-  echo "~/academic-project/pkg_plot"
-  git -C ~/academic-project/pkg_plot add .
-  git -C ~/academic-project/pkg_plot commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/pkg_plot push
-  echo "------------------------------------------------------"
-#
-  echo "~/academic-project/scripts-for-plotting-data"
-  git -C ~/academic-project/scripts-for-plotting-data add .
-  git -C ~/academic-project/scripts-for-plotting-data commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/scripts-for-plotting-data push
-  echo "------------------------------------------------------"
-#
-  echo "~/academic-writting"
-  git -C ~/academic-writting add .
-  git -C ~/academic-writting commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-writting push
-  echo "------------------------------------------------------"
-#
-  echo "scripts-for-plotting-data"
   git -C ~/academic-project/system-scripts add .
   git -C ~/academic-project/system-scripts commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/system-scripts push
-  echo "------------------------------------------------------"
+  echo ""
+  echo "The git directory is ~/academic-project/system-scripts"
+  echo "--------------------------------------------------------------------------------"
 #
-  echo "~/academic-project/rotational-propagator-for-linear-rotor"
+  git -C ~/academic-writting add .
+  git -C ~/academic-writting commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-writting push
+  echo ""
+  echo "The git directory is ~/academic-writting"
+  echo "--------------------------------------------------------------------------------"
+#
+  git -C ~/academic-project/pkg_plot add .
+  git -C ~/academic-project/pkg_plot commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/pkg_plot push
+  echo ""
+  echo "The git directory is ~/academic-project/pkg_plot"
+  echo "--------------------------------------------------------------------------------"
+#
+  git -C ~/academic-project/scripts-for-plotting-data add .
+  git -C ~/academic-project/scripts-for-plotting-data commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/scripts-for-plotting-data push
+  echo ""
+  echo "The git directory is ~/academic-project/scripts-for-plotting-data"
+  echo "--------------------------------------------------------------------------------"
+#
   git -C ~/academic-project/rotational-propagator-for-linear-rotor add .
   git -C ~/academic-project/rotational-propagator-for-linear-rotor commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/rotational-propagator-for-linear-rotor push
-  echo "------------------------------------------------------"
+  echo ""
+  echo "The git directory is ~/academic-project/rotational-propagator-for-linear-rotor"
+  echo "--------------------------------------------------------------------------------"
+#
+  git -C ~/academic-project/output add .
+  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/output push
+  echo ""
+  echo "The git directory is ~/academic-project/output"
+  echo "--------------------------------------------------------------------------------"
+#
+  git -C ~/Documents/backup add .
+  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/Documents/backup push
+  echo ""
+  echo "The git directory is ~/Documents/backup"
+  echo "--------------------------------------------------------------------------------"
+#
 }
 
 function pullall () {
@@ -243,7 +246,6 @@ function pullall () {
   git -C ~/academic-project/system-scripts pull
   git -C ~/academic-project/rotational-propagator-for-linear-rotor pull
 }
-
 
 export EDITOR=vim
 export VISUAL="$EDITOR"
@@ -271,8 +273,6 @@ alias sshcedar='ssh -X cedar'
 alias sshsnbncbs='ssh -X snbncbs'
 alias shutdown='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
-# alias g++='/usr/local/bin/g++'
-# alias gcc='/usr/local/bin/gcc'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
