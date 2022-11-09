@@ -182,6 +182,7 @@ function acpall () {
   git -C ~/vimwiki add .
   git -C ~/vimwiki commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/vimwiki push
+  echo ""
   echo "The git directory is ~/vimwiki"
   echo "--------------------------------------------------------------------------------"
 #
@@ -238,13 +239,44 @@ function acpall () {
 
 function pullall () {
   git -C ~/vimwiki pull
-  git -C ~/Documents/backup pull
-  git -C ~/academic-project/output pull
-  git -C ~/academic-project/pkg_plot pull
-  git -C ~/academic-project/scripts-for-plotting-data pull
-  git -C ~/academic-writting pull
+  echo ""
+  echo "The git directory is ~/vimwiki"
+  echo "--------------------------------------------------------------------------------"
+#
   git -C ~/academic-project/system-scripts pull
+  echo ""
+  echo "The git directory is ~/academic-project/system-scripts"
+  echo "--------------------------------------------------------------------------------"
+#
+  git -C ~/academic-writting pull
+  echo ""
+  echo "The git directory is ~/academic-writting"
+  echo "--------------------------------------------------------------------------------"
+#
+  git -C ~/academic-project/pkg_plot pull
+  echo ""
+  echo "The git directory is ~/academic-project/pkg_plot"
+  echo "--------------------------------------------------------------------------------"
+#
+  git -C ~/academic-project/scripts-for-plotting-data pull
+  echo ""
+  echo "The git directory is ~/academic-project/scripts-for-plotting-data"
+  echo "--------------------------------------------------------------------------------"
+#
   git -C ~/academic-project/rotational-propagator-for-linear-rotor pull
+  echo ""
+  echo "The git directory is ~/academic-project/rotational-propagator-for-linear-rotor"
+  echo "--------------------------------------------------------------------------------"
+#
+  git -C ~/academic-project/output pull
+  echo ""
+  echo "The git directory is ~/academic-project/output"
+  echo "--------------------------------------------------------------------------------"
+#
+  git -C ~/Documents/backup pull
+  echo ""
+  echo "The git directory is ~/Documents/backup"
+  echo "--------------------------------------------------------------------------------"
 }
 
 export EDITOR=vim
