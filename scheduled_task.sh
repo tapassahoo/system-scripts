@@ -17,6 +17,6 @@ sed -i "s/\<JOB_TYPE\>/$var_job_type/" temp_execution_moribs_driver_linear_molec
 sed -i "s/\<NUMB_MOLECULE\>/$var_molecule/" temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}.py
 sed -i "s/\<PARAMETER_VALUE\>/$var_parameter/" temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}.py
 sed -i "s/\<NUMB_PRESKIP\>/$var_preskip/" temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}.py
-python temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}.py
+python temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}.py > moribs_${var_job_type}_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}.log &
 echo -e "\n"
 echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
