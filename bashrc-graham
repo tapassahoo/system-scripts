@@ -432,3 +432,13 @@ function job_tail() {
     echo -e "${COL}Tail of err for job ${1}${NC}"
     tail `get_job_err ${1}`
 }
+
+cf ()
+{
+    for x in $@;
+    do
+        echo $x:;
+        cat "$x";
+    done;
+    unset x
+}
