@@ -11,6 +11,8 @@ cp ~/.ssh/config ${HOME}/academic-project/system-scripts/ssh-config-$(uname)
 #
 cp -r /usr/local/bin/push-system-scripts.sh ${HOME}/academic-project/system-scripts/push-system-scripts-$(uname).sh
 cp -r /usr/local/bin/pull-data-from-graham.sh ${HOME}/academic-project/system-scripts/pull-data-from-graham-$(uname).sh
+#
+crontab -l > ${HOME}/academic-project/system-scripts/crontab-file-$(uname)
 
 cd ${HOME}/academic-project/system-scripts/
 git pull && git add . && git commit -m "$(uname): Updated on $(date +"%d-%m-%Y")" && git push -f
