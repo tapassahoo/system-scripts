@@ -332,8 +332,8 @@ alias pending=$'squeue -u tapas -t PENDING'
 alias killpd=$'scancel -t PENDING -u $USER'
 alias joblist=$'squeue -u $USER'
 
-function summary() {
-    squeue "$@" | awk '
+function summary () {
+    squeue -u tapas "$@" | awk '
     BEGIN {
         abbrev["R"]="Running"
         abbrev["PD"]="Pending"
@@ -348,7 +348,6 @@ function summary() {
         }
     }'
 }
-export -f summary
 
 export PYTHONPATH="${PYTHONPATH}:$HOME/MoRiBS-PIGS/"
 export PYTHONPATH="${PYTHONPATH}:$HOME/exact-diagonalization/"
