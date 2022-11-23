@@ -261,7 +261,7 @@ function pullall () {
   echo "The git directory is ~/academic-writting"
   echo "--------------------------------------------------------------------------------"
 #
-  git -C ~/academic-project/general_code pull
+  git -C ~/academic-project/general-code pull
   echo ""
   echo "The git directory is ~/academic-project/general-code"
   echo "--------------------------------------------------------------------------------"
