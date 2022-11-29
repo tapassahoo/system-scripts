@@ -351,6 +351,7 @@ function summary () {
 
 export PYTHONPATH="${PYTHONPATH}:$HOME/MoRiBS-PIGS/"
 export PYTHONPATH="${PYTHONPATH}:$HOME/exact-diagonalization/"
+export PYTHONPATH="${PYTHONPATH}:$HOME/DipoleChain.jl/scripts-for-job-submission/"
 
 export XDG_RUNTIME_DIR=/some/directory/you/specify
 export RUNLEVEL=3
