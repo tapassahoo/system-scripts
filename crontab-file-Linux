@@ -23,7 +23,7 @@
 # m h  dom mon dow   command
 
 0 0 * * *  rm -rf ${HOME}/Logs/* 
-0 8-18/2 * * *  /usr/local/bin/pull-data-from-graham.sh >> ${HOME}/Logs/pull-data-from-graham.log 2>&1
+0 8-18/2 * * *  /usr/local/bin/pull-data.sh >> ${HOME}/Logs/pull-data.log 2>&1
 0 8-18/2 * * *  /usr/local/bin/push-system-scripts.sh >> ${HOME}/Logs/push-github.log 2>&1
 #
 #
