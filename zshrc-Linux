@@ -229,6 +229,13 @@ function acpall () {
   echo "The git directory is ~/academic-project/rotational-propagator-for-linear-rotor"
   echo "--------------------------------------------------------------------------------"
 #
+  git -C ~/academic-project/quantum-chemistry-project add .
+  git -C ~/academic-project/quantum-chemistry-project commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/quantum-chemistry-project push
+  echo ""
+  echo "The git directory is ~/academic-project/quantum-chemistry-project"
+  echo "--------------------------------------------------------------------------------"
+#
   git -C ~/academic-project/output add .
   git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/output push
@@ -279,6 +286,11 @@ function pullall () {
   git -C ~/academic-project/rotational-propagator-for-linear-rotor pull
   echo ""
   echo "The git directory is ~/academic-project/rotational-propagator-for-linear-rotor"
+  echo "--------------------------------------------------------------------------------"
+#
+  git -C ~/academic-project/quantum-chemistry-project pull
+  echo ""
+  echo "The git directory is ~/academic-project/quantum-chemistry-project"
   echo "--------------------------------------------------------------------------------"
 #
   git -C ~/academic-project/output pull
