@@ -378,6 +378,7 @@ export CXX=g++
 export F77=gfortran
 
 function interactive_jobs () {
+	cd /scratch/tapas/
 	salloc --time=03:00:00 --ntasks=1 --account=rrg-pnroy_cpu
 }
 export -f interactive_jobs
