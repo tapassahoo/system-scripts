@@ -127,7 +127,6 @@ function acpall () {
   rsync -r ~/.ssh/config ${HOME}/academic-project/system-scripts/ssh-config-$(uname)
   rsync -r ~/.vimrc ${HOME}/academic-project/system-scripts/vimrc-script-$(uname)
   rsync -r ~/.zshrc ${HOME}/academic-project/system-scripts/zshrc-$(uname)
-  rsync -r ~/.zprofile ${HOME}/academic-project/system-scripts/zprofile-$(uname)
   rsync -r ~/.gitignore ${HOME}/academic-project/system-scripts/gitignore-$(uname)
 #
   git -C ~/academic-project/system-scripts add .
