@@ -76,7 +76,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colored-man-pages colorize command-not-found python pip zsh-autosuggestions zsh-syntax-highlighting fzf zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,92 +107,174 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-plugins=(
-	colored-man-pages 
-	colorize 
-    zsh-autosuggestions
-	zsh-syntax-highlighting
-	vimwiki/vimwiki
-	command-not-found
-	python
-	pip
-)
-
 function fmtpython () {
   autopep8 --in-place --aggressive --aggressive ${1}
 }
 
 function acpall () {
   echo ""
-  echo ""
   echo "acpall:" `date`
-  set -xv
+  echo ""
+  echo "*****************************************************************************"
+#
   git -C ~/vimwiki add .
   git -C ~/vimwiki commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/vimwiki push
+  echo ""
+  echo "The git directory is ~/vimwiki"
+  echo "*****************************************************************************"
 #
-  git -C ~/Documents/backup add .
-  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/Documents/backup push
-#
-  git -C ~/academic-project/output add .
-  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/output push
-#
-  git -C ~/academic-project/pkg_plot add .
-  git -C ~/academic-project/pkg_plot commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/pkg_plot push
-#
-  git -C ~/academic-project/scripts-for-plotting-data add .
-  git -C ~/academic-project/scripts-for-plotting-data commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/scripts-for-plotting-data push
+  rsync -r ~/.ssh/config ${HOME}/academic-project/system-scripts/ssh-config-$(uname)
+  rsync -r ~/.vimrc ${HOME}/academic-project/system-scripts/vimrc-script-$(uname)
+  rsync -r ~/.zshrc ${HOME}/academic-project/system-scripts/zshrc-$(uname)
+  rsync -r ~/.zprofile ${HOME}/academic-project/system-scripts/zprofile-$(uname)
+  rsync -r ~/.gitignore ${HOME}/academic-project/system-scripts/gitignore-$(uname)
 #
   git -C ~/academic-project/system-scripts add .
   git -C ~/academic-project/system-scripts commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/system-scripts push
-#
-  git -C ~/academic-project/rotational-propagator-for-linear-rotor add .
-  git -C ~/academic-project/rotational-propagator-for-linear-rotor commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/rotational-propagator-for-linear-rotors push
+  echo ""
+  echo "The git directory is ~/academic-project/system-scripts"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-writting add .
   git -C ~/academic-writting commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-writting push
+  echo ""
+  echo "The git directory is ~/academic-writting"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/general-code add .
+  git -C ~/academic-project/general-code commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/general-code push
+  echo ""
+  echo "The git directory is ~/academic-project/general-code"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/pkg_plot add .
+  git -C ~/academic-project/pkg_plot commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/pkg_plot push
+  echo ""
+  echo "The git directory is ~/academic-project/pkg_plot"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/scripts-for-plotting-data add .
+  git -C ~/academic-project/scripts-for-plotting-data commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/scripts-for-plotting-data push
+  echo ""
+  echo "The git directory is  ~/academic-project/scripts-for-plotting-data"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/rotational-propagator-for-linear-rotor add .
+  git -C ~/academic-project/rotational-propagator-for-linear-rotor commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/rotational-propagator-for-linear-rotor push
+  echo ""
+  echo "The git directory is ~/academic-project/rotational-propagator-for-linear-rotor"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/DipoleChain.jl add .
+  git -C ~/academic-project/DipoleChain.jl commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/DipoleChain.jl push
+  echo ""
+  echo "The git directory is ~/academic-project/DipoleChain.jl"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/quantum-chemistry-project add .
+  git -C ~/academic-project/quantum-chemistry-project commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/quantum-chemistry-project push
+  echo ""
+  echo "The git directory is ~/academic-project/quantum-chemistry-project"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/output add .
+  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/output push
+  echo ""
+  echo "The git directory is ~/academic-project/output"
+  echo "*****************************************************************************"
+#
+  git -C ~/Documents/backup add .
+  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/Documents/backup push
+  echo ""
+  echo "The git directory is ~/Documents/backup"
+  echo "*****************************************************************************"
 }
 
 function pullall () {
   echo ""
-  echo ""
   echo "pullall:" `date`
-  set -xv
+  echo ""
+  echo "*****************************************************************************"
+#
   git -C ~/vimwiki pull
-  git -C ~/Documents/backup pull
-  git -C ~/academic-project/output pull
-  git -C ~/academic-project/pkg_plot pull
-  git -C ~/academic-project/scripts-for-plotting-data pull
-  git -C ~/academic-writting pull
+  echo ""
+  echo "The git directory is ~/vimwiki"
+  echo "*****************************************************************************"
+#
   git -C ~/academic-project/system-scripts pull
+  echo ""
+  echo "The git directory is ~/academic-project/system-scripts"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-writting pull
+  echo ""
+  echo "The git directory is ~/academic-writting"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/general-code pull
+  echo ""
+  echo "The git directory is ~/academic-project/general-code"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/pkg_plot pull
+  echo ""
+  echo "The git directory is ~/academic-project/pkg_plot"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/scripts-for-plotting-data pull
+  echo ""
+  echo "The git directory is ~/academic-project/scripts-for-plotting-data"
+  echo "*****************************************************************************"
+#
   git -C ~/academic-project/rotational-propagator-for-linear-rotor pull
+  echo ""
+  echo "The git directory is ~/academic-project/rotational-propagator-for-linear-rotor"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/DipoleChain.jl pull
+  echo ""
+  echo "The git directory is ~/academic-project/DipoleChain.jl"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/quantum-chemistry-project pull
+  echo ""
+  echo "The git directory is ~/academic-project/quantum-chemistry-project"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/output pull
+  echo ""
+  echo "The git directory is ~/academic-project/output"
+  echo "*****************************************************************************"
+#
+  git -C ~/Documents/backup pull
+  echo ""
+  echo "The git directory is ~/Documents/backup"
+  echo "*****************************************************************************"
 }
 
 
 function acp () {
-  git add .
-  git commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git push
+  git -C "$1" add .
+  git -C "$1" commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C "$1" push
 }
 
 # Activate the plugins
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 if [ -f ~/.zprofile ]; then
   . ~/.zprofile
 fi
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 export EDITOR=vim
 export VISUAL="$EDITOR"
 
@@ -222,7 +304,6 @@ alias viki='open file:///Users/tsahoo/vimwiki_html/index.html'
 
 setopt +o nomatch
 function calc () { echo "$*" | bc ; } 
-export calc
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -232,6 +313,7 @@ alias egrep='egrep --color=auto'
 export PYTHONPATH="$HOME/academic-project/exact-diagonalization:$PYTHONPATH"
 export PYTHONPATH="$HOME/academic-project/MoRiBS-PIGS/:$PYTHONPATH"
 export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/pkg_plot/"
+export PYTHONPATH="${PYTHONPATH}:$HOME/academic-project/general-code/"
 
 
 # Frequently used aliases
@@ -240,11 +322,8 @@ alias sshnlogn='ssh -X nlogn'
 alias sshfeynman='ssh -X feynman'
 alias sshgraham='ssh -X graham'
 alias sshcedar='ssh -X cedar'
-alias sshsnbncbs='ssh -X snbncbs'
 alias shutdown='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
-alias g++='/usr/local/bin/g++'
-alias gcc='/usr/local/bin/gcc'
 
 # For macOS
 alias sysupdate='softwareupdate -i -a'
@@ -264,17 +343,7 @@ alias networkIP='ipconfig getifaddr en0'
 
 export LC_CTYPE="en_US.UTF-8"
 
-export PATH="/usr/local/bin:$PATH"
-export PATH=/Library/TeX/texbin/:$PATH
-export PATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:$PATH
-# If you need to have python@3.10 first in your PATH, run:
-export PATH="/usr/local/opt/python@3.10/bin:$PATH"
-
-# For compilers to find python@3.10 you may need to set:
-#export LDFLAGS="-L/usr/local/opt/python@3.10/lib"
-
-# For pkg-config to find python@3.10 you may need to set:
-export PKG_CONFIG_PATH="/usr/local/opt/python@3.10/lib/pkgconfig"
+export PATH="/Users/tapas/Library/Python/3.9/bin:$PATH"
 alias pyenvs='source ~/venv/bin/activate'
 
 compresspdf () {
@@ -309,28 +378,12 @@ function pdfpextr ()
        ${3}
 }
 
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-
-export PATH=/usr/local/bin:$PATH
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
-
-#   Set Default Editor (change 'Nano' to the editor of your choice)
-#   ------------------------------------------------------------
-export EDITOR=/usr/bin/vim
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 if [ -x "$(command -v exa)" ]; then
     alias ls="exa"
     alias la="exa --long --all --group"
 fi
-
-fh() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
@@ -347,7 +400,15 @@ export CXX=/usr/local/bin/g++-12
 export CPP=/usr/local/bin/g++-12
 export F77=gfortran
 export FC=gfortran
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
-export LDFLAGS="-L/usr/local/opt/llvm/lib/c++ -Wl,-rpath,/usr/local/opt/llvm/lib/c++"
+export PATH="/usr/local/sbin:$PATH"
+source /Users/tapas/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=".:/usr/local/bin:${PATH}"
+
+alias killpimc=$'kill -09 `ps ax|grep pimc|awk "{print $1}"`'
+
+#######################################################################
+#For compilers to find libomp you may need to set:
+export LDFLAGS="-L/usr/local/opt/libomp/lib"
+export CPPFLAGS="-I/usr/local/opt/libomp/include"

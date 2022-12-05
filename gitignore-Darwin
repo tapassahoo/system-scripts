@@ -23,6 +23,7 @@ node_modules
 
 exact-energies-of-H2O/
 Results-p-H2O/
+**.rot
 **log*
 **.o
 **.pyc
