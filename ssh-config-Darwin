@@ -11,7 +11,6 @@ Host graham
 
 Host cedar
   HostName cedar.computecanada.ca
-  ProxyCommand ssh -X graham -W %h:%p
   User tapas
 
 Host nlogn
