@@ -1,0 +1,267 @@
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
+
+" Enable type file detection. Vim will be able to try to detect the type of file is use.
+filetype on
+
+" Enable plugins and load plugin for the detected file type.
+filetype plugin on
+
+set splitright
+
+" Load an indent file for the detected file type.
+" filetype indent on
+
+" Add numbers to the file.
+"set number
+
+" Set shift width to 4 spaces.
+set shiftwidth=4
+
+" Set tab width to 4 columns.
+set tabstop=4
+
+" Use space characters instead of tabs.
+"set expandtab
+ 
+" Use only tab 
+set noexpandtab
+
+" Do not save backup files.
+set nobackup
+
+" Do not let cursor scroll below or above N number of lines when scrolling.
+set scrolloff=10
+
+" Do not wrap lines. Allow long lines to extend as far as the line goes.
+"set nowrap
+
+" While searching though a file incrementally highlight matching characters as you type.
+set incsearch
+
+" Ignore capital letters during search.
+set ignorecase
+
+" Override the ignorecase option if searching for capital letters.
+" This will allow you to search specifically for capital letters.
+set smartcase
+
+" Show partial command you type in the last line of the screen.
+set showcmd
+
+" Show the mode you are on the last line.
+set showmode
+
+" Show matching words during a search.
+set showmatch
+
+" Set the commands to save in history default number is 20.
+set history=1000
+
+" Enable auto completion menu after pressing TAB.
+set wildmenu
+
+" Make wildmenu behave like similar to Bash completion.
+set wildmode=list:longest
+
+" There are certain files that we would never want to edit with Vim.
+" Wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+" STATUS LINE ------------------------------------------------------------ {{{
+
+" Clear status line when vimrc is reloaded.
+set statusline=
+
+" Status line left side.
+set statusline+=\ %F\ %M\ %Y\ %R
+
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
+
+" Status line right side.
+"set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+set statusline+=\ Row:\ %l\ Col:\ %c\ percent:\ %p%%
+
+" Show the status on the second to last line.
+set laststatus=2
+
+" }}}
+
+"For local changes in python tabstop = 4 
+autocmd FileType python setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+
+" For make the cursor be in the last editing place
+set mouse=a
+set mouse-=a
+
+fu! RedirStdoutNewTabSingle(cmd)
+  let a:newt= expand('%:p') . ".out.tmp"
+  tabnext
+  if expand('%:p') != a:newt
+    tabprevious
+    exec "tabnew" . a:newt
+  else
+    exec "%d"
+  endif
+  exec 'silent r !' . a:cmd
+  set nomodified
+endfunc
+
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+
+"Later addition
+set noerrorbells "This removes vim's default error bell, turning it off so that it doesn't annoy us
+set noswapfile
+set spell
+set backspace=indent,eol,start
+
+" Maps for running codes
+let mapleader = ","
+nnoremap <Leader>ta :call TestAll()<cr>
+nnoremap <Leader>tf :call TestFile()<cr>
+nnoremap <Leader>tt :call TestThis()<cr>
+
+function TestAll()
+  try
+    let l:test_command = GetTestCommand()
+    execute "rightb vert term" l:test_command
+  catch
+    call FireWarning(v:exception)
+  endtry
+endfunction
+
+function TestFile()
+  try
+    let l:test_command = GetTestCommand()
+    execute "rightb vert term ./compiler.sh"
+  catch
+    call FireWarning(v:exception)
+  endtry
+endfunction
+
+function TestThis()
+  try
+    let l:test_command = GetTestCommand()
+    if IsJestTest(l:test_command)
+      throw "Jest doesn't support testing a single test this way."
+    endif
+    execute "rightb vert term" l:test_command "%:" . line(".")
+  catch
+    call FireWarning(v:exception)
+  endtry
+endfunction
+
+function IsJestTest(test_command)
+  let l:parsed_jest_command = matchstr(a:test_command, "--watch-all=false")
+  return l:parsed_jest_command != ""
+endfunction
+
+let g:test_command_override = "./compiler.sh"
+
+function GetTestCommand() 
+  if g:test_command_override != ""
+    echo 'Running test with g:test_command_override. Use :let g:test_command_override = "" to reset'
+    return g:test_command_override
+  else
+    return GetTestCommandByExt()
+  endif
+endfunction
+
+function GetTestCommandByExt()
+  let l:extension = expand("%:e")
+  if l:extension == "rb"
+    return "rspec"
+  elseif l:extension == "js" || l:extension == "ts" || l:extension == "tsx"
+    return "npm test -- --watch-all=false"
+  elseif l:extension == "exs"
+    return "mix test"
+  else 
+    throw 'Test file extension not recognized. Use :let g:test_command_override="<command>" to set a custom test command.'
+  endif
+endfunction
+
+function FireWarning(warning)
+  echohl WarningMsg
+  echo a:warning
+  echohl None
+endfunction
+
+nnoremap <Leader>cl :call CloseTest()<CR>
+
+function CloseTest() 
+  if &buftype == "terminal"
+    let l:buffer_number = bufnr("%")
+    let l:terminal_status = term_getstatus(buffer_number)
+    if l:terminal_status == "finished"
+      q
+    endif
+  endif
+endfunction
+
+" Set vim color
+
+" set your color scheme (replace wombat with whatever yours is called)
+" if you're using a gvim or macvim, then your color scheme may have a version
+" that uses more than 256 colors
+set background=light
+if has("gui_running")
+    colorscheme default
+elseif &t_Co == 256
+    colorscheme default
+endif
+
+" turn on language specific syntax highlighting
+syntax on
+syntax enable
+
+let g:searchhi_clear_all_autocmds = 'InsertEnter'
+let g:searchhi_update_all_autocmds = 'InsertLeave'
+
+" color for searching
+set hlsearch
+hi Search ctermbg=Yellow
+hi Search ctermfg=Black
+
+" color for visual mode
+highlight Visual cterm=bold ctermbg=lightYellow ctermfg=darkblue
+
+" set cursorline
+" hi cursorline cterm=none ctermbg=Black guibg=grey
+
+" for spell checking
+hi clear SpellBad
+hi SpellBad cterm=underline
+hi SpellBad gui=undercurl 
+nmap <c-s> :w<CR>
+" imap <c-s> <Esc>:w<CR>a
+imap <c-s> <Esc>:w<CR>
+
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+
+set mousemodel=popup
+set guifont=Monaco:h12
+
+hi VimwikiLink term=underline ctermfg=cyan guifg=cyan gui=underline
+
+command! Diary VimwikiDiaryIndex
+augroup vimwikigroup
+    autocmd!
+    " automatically update links on read diary
+    autocmd BufRead,BufNewFile diary.wiki VimwikiDiaryGenerateLinks
+augroup end
+
+" format the file
+map <Leader>fm gg=G
