@@ -178,130 +178,143 @@ function pyenvs () {
 }
 
 function acpall () {
+  echo ""
   echo "acpall:" `date`
-  echo "--------------------------------------------------------------------------------"
+  echo ""
+  echo "*****************************************************************************"
+#
   git -C ~/vimwiki add .
   git -C ~/vimwiki commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/vimwiki push
   echo ""
   echo "The git directory is ~/vimwiki"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
+#
+  rsync -r ~/.ssh/config ${HOME}/academic-project/system-scripts/ssh-config-$(uname)
+  rsync -r ~/.vimrc ${HOME}/academic-project/system-scripts/vimrc-script-$(uname)
+  rsync -r ~/.zshrc ${HOME}/academic-project/system-scripts/zshrc-$(uname)
+  rsync -r ~/.gitignore ${HOME}/academic-project/system-scripts/gitignore-$(uname)
 #
   git -C ~/academic-project/system-scripts add .
   git -C ~/academic-project/system-scripts commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/system-scripts push
   echo ""
   echo "The git directory is ~/academic-project/system-scripts"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-writting add .
   git -C ~/academic-writting commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-writting push
   echo ""
   echo "The git directory is ~/academic-writting"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/general-code add .
   git -C ~/academic-project/general-code commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/general-code push
   echo ""
   echo "The git directory is ~/academic-project/general-code"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/pkg_plot add .
   git -C ~/academic-project/pkg_plot commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/pkg_plot push
   echo ""
   echo "The git directory is ~/academic-project/pkg_plot"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/scripts-for-plotting-data add .
   git -C ~/academic-project/scripts-for-plotting-data commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/scripts-for-plotting-data push
   echo ""
   echo "The git directory is ~/academic-project/scripts-for-plotting-data"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/rotational-propagator-for-linear-rotor add .
   git -C ~/academic-project/rotational-propagator-for-linear-rotor commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/rotational-propagator-for-linear-rotor push
   echo ""
   echo "The git directory is ~/academic-project/rotational-propagator-for-linear-rotor"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/quantum-chemistry-project add .
   git -C ~/academic-project/quantum-chemistry-project commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/quantum-chemistry-project push
   echo ""
   echo "The git directory is ~/academic-project/quantum-chemistry-project"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/output add .
   git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/output push
   echo ""
   echo "The git directory is ~/academic-project/output"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/Documents/backup add .
   git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/Documents/backup push
   echo ""
   echo "The git directory is ~/Documents/backup"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
 }
 
 function pullall () {
+  echo ""
+  echo "pullall:" `date`
+  echo ""
+  echo "*****************************************************************************"
+#
   git -C ~/vimwiki pull
   echo ""
   echo "The git directory is ~/vimwiki"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/system-scripts pull
   echo ""
   echo "The git directory is ~/academic-project/system-scripts"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-writting pull
   echo ""
   echo "The git directory is ~/academic-writting"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/general-code pull
   echo ""
   echo "The git directory is ~/academic-project/general-code"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/pkg_plot pull
   echo ""
   echo "The git directory is ~/academic-project/pkg_plot"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/scripts-for-plotting-data pull
   echo ""
   echo "The git directory is ~/academic-project/scripts-for-plotting-data"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/rotational-propagator-for-linear-rotor pull
   echo ""
   echo "The git directory is ~/academic-project/rotational-propagator-for-linear-rotor"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/quantum-chemistry-project pull
   echo ""
   echo "The git directory is ~/academic-project/quantum-chemistry-project"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/academic-project/output pull
   echo ""
   echo "The git directory is ~/academic-project/output"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 #
   git -C ~/Documents/backup pull
   echo ""
   echo "The git directory is ~/Documents/backup"
-  echo "--------------------------------------------------------------------------------"
+  echo "*****************************************************************************"
 }
 
 export EDITOR=vim
