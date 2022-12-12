@@ -2,7 +2,7 @@ Host *
   ServerAliveInterval 300
   ServerAliveCountMax 2
   TCPKeepAlive=no
-  ForwardX11 yes
+  ForwardX11 no
   #XAuthLocation /opt/X11/bin/xauth
   #IdentityFile ~/.ssh/id_rsa.pub
 
