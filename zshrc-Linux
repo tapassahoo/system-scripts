@@ -194,6 +194,7 @@ function acpall () {
   rsync -r ~/.vimrc ${HOME}/academic-project/system-scripts/vimrc-script-$(uname)
   rsync -r ~/.zshrc ${HOME}/academic-project/system-scripts/zshrc-$(uname)
   rsync -r ~/.gitignore ${HOME}/academic-project/system-scripts/gitignore-$(uname)
+  crontab -l > ${HOME}/academic-project/system-scripts/crontab-$(uname)
 #
   git -C ~/academic-project/system-scripts add .
   git -C ~/academic-project/system-scripts commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
