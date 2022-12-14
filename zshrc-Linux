@@ -80,7 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 # update your ~/.zshrc file
 FZF_BASE="$HOME/.fzf"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting history colored-man-pages colorize pip python fzf zsh-z)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting history colored-man-pages colorize pip python fzf zsh-z web-search)
 
 source $ZSH/oh-my-zsh.sh
 
