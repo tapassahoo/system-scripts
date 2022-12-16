@@ -355,3 +355,5 @@ export CXX=g++
 export CPP=g++
 export F77=gfortran
 export FC=gfortran
+
+#figlet S N Bose National Centre for Basic Sciences! | lolcat -F 5
