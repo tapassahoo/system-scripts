@@ -21,6 +21,7 @@ venv
 node_modules
 .sass-cache
 
+personal-records/marksheets-certificates/test.pdf
 exact-energies-of-H2O/
 Results-p-H2O/
 **.rot
