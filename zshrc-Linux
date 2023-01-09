@@ -261,58 +261,58 @@ function acpall () {
 #
 }
 
-function pullall () {
+function ghall () {
   echo ""
-  echo "pullall:" `date`
+  echo "ghall:" `date`
   echo ""
   echo "*****************************************************************************"
 #
-  git -C ~/vimwiki pull
+  git -C ~/vimwiki "$1"
   echo ""
   echo "The git directory is ~/vimwiki"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/system-scripts pull
+  git -C ~/academic-project/system-scripts "$1"
   echo ""
   echo "The git directory is ~/academic-project/system-scripts"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-writting pull
+  git -C ~/academic-writting "$1"
   echo ""
   echo "The git directory is ~/academic-writting"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/general-code pull
+  git -C ~/academic-project/general-code "$1"
   echo ""
   echo "The git directory is ~/academic-project/general-code"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/pkg_plot pull
+  git -C ~/academic-project/pkg_plot "$1"
   echo ""
   echo "The git directory is ~/academic-project/pkg_plot"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/scripts-for-plotting-data pull
+  git -C ~/academic-project/scripts-for-plotting-data "$1"
   echo ""
   echo "The git directory is ~/academic-project/scripts-for-plotting-data"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/rotational-propagator-for-linear-rotor pull
+  git -C ~/academic-project/rotational-propagator-for-linear-rotor "$1"
   echo ""
   echo "The git directory is ~/academic-project/rotational-propagator-for-linear-rotor"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/quantum-chemistry-project pull
+  git -C ~/academic-project/quantum-chemistry-project "$1"
   echo ""
   echo "The git directory is ~/academic-project/quantum-chemistry-project"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/output pull
+  git -C ~/academic-project/output "$1"
   echo ""
   echo "The git directory is ~/academic-project/output"
   echo "*****************************************************************************"
 #
-  git -C ~/Documents/backup pull
+  git -C ~/Documents/backup "$1"
   echo ""
   echo "The git directory is ~/Documents/backup"
   echo "*****************************************************************************"
