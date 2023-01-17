@@ -357,3 +357,8 @@ export F77=gfortran
 export FC=gfortran
 
 #figlet S N Bose National Centre for Basic Sciences! | lolcat -F 5
+
+function mathpix () {
+cd ~/.
+./Mathpix_Snipping_Tool-x86_64.v03.00.0093.AppImage &
+}
