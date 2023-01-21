@@ -56,3 +56,7 @@ password*
 *.lyx~
 *.lyx#
 *.emergency1.lyx
+*.dep
+*.dpth
+*Notes.bib
+*.md5
