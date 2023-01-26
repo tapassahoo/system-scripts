@@ -60,3 +60,4 @@ password*
 *.dpth
 *Notes.bib
 *.md5
+*.fdb_latexmk
