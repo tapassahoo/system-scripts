@@ -165,4 +165,4 @@
 24 10 2 * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh 11 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
 30 8 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh 12 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
 30 10 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh 13 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
-49 14 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh 14 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
+30 12 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh 14 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
