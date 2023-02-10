@@ -161,13 +161,13 @@
 27 10 2 * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh 14 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
 #
 ###################################
-42 13 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.1 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-0 14 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.1 10000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-5 14 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.1 15000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
+ 0 6 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.1 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
+30 6 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.1 10000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
+45 6 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.1 15000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
 #
-10 14 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.2 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-30 14 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.2 10000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-45 14 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.2 15000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
+ 0 7 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.2 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
+30 7 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.2 10000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
+45 7 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 12 0.2 15000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
 #
 #
  0 8 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 13 0.1 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
