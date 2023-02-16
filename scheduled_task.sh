@@ -2,22 +2,33 @@
 echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 echo -e "\n"
 date 
-var_job_type=$1
-var_molecule=$2
-var_parameter=$3
-var_preskip=$4
-pwd 
-echo "job_type       = $var_job_type"
-echo "numb_molecule  = $var_molecule"
-echo "numb_parameter = $var_parameter"
-echo "numb_preskip   = $var_preskip"
+pwd
+
+job_type=$1
+numb_molecule=$2
+parameter_value=$3
+numb_block=$4
+numb_pass=$5
+preskip_value=$6
+
+echo "job_type        = $job_type"
+echo "numb_molecule   = $numb_molecule"
+echo "parameter_value = $parameter_value"
+echo "numb_block      = $numb_block"
+echo "numb_pass       = $numb_pass"
+echo "numb_preskip    = $preskip_value"
+
 cd /home/tapas/MoRiBS-PIGS/examples/scripts/
-cp generic_execution_moribs_driver_linear_molecule.py temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}_analysis.py
-sed -i "s/\<JOB_TYPE\>/$var_job_type/" temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}_analysis.py
-sed -i "s/\<NUMB_MOLECULE\>/$var_molecule/" temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}_analysis.py
-sed -i "s/\<PARAMETER_VALUE\>/$var_parameter/" temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}_analysis.py
-sed -i "s/\<NUMB_PRESKIP\>/$var_preskip/" temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}_analysis.py
-python temp_execution_moribs_driver_linear_molecule_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}_analysis.py > ${HOME}/final-pigs-outputs-for-plotting/moribs_${var_job_type}_n${var_molecule}_beta${var_parameter}_nskip${var_preskip}.log &
+cp generic_execution_moribs_driver_linear_molecule.py temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py
+sed -i "s/\<INPUT_JOB_TYPE\>/$job_type/" temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py
+sed -i "s/\<INPUT_NUMB_MOLECULE\>/$numb_molecule/" temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py
+sed -i "s/\<INPUT_PARAMETER_VALUE\>/$parameter_value/" temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py
+sed -i "s/\<INPUT_NUMB_BLOCK\>/$numb_block/" temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py
+sed -i "s/\<INPUT_NUMB_PASS\>/$numb_pass/" temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py
+sed -i "s/\<INPUT_NUMB_PRESKIP\>/$preskip_value/" temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py
+python temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py > ${HOME}/final-pigs-outputs-for-plotting/moribs_${job_type}_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mcblocks${numb_block}_mcpasses${numb_pass}_nskip${preskip_value}.log &
+
+pwd
 date 
 echo -e "\n"
 echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
