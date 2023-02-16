@@ -179,4 +179,4 @@
 45 9 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 14 0.2 15000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
 ###################################
 30 8 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh 13 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
-30 9 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh 14 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
+30 10 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh 14 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
