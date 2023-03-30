@@ -53,6 +53,7 @@ password*
 *.fdb_latexmk,
 *.nav
 *.snm
+*.lof
 *.lyx~
 *.lyx#
 *.emergency1.lyx
