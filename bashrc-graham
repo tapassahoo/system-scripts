@@ -9,7 +9,7 @@ fi
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
-    module restore modules-graham
+    #module restore graham-modules
 fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
