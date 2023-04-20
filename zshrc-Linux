@@ -142,6 +142,8 @@ function cpdf () {
 
 function pdfextractor () {
     gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage="${1}" -dLastPage="${2}" -sOutputFile="${3%.pdf}_p${1}-p${2}.pdf" "${3}"
+	# gs -dNOPAUSE -dBATCH -sDEVICE=png16m –dFirstPage=3 –dLastPage=4 -sOutputFile="Pic-%d.png" input.pdf
+	# gs -dSAFER -dBATCH -dNOPAUSE -r300 -sDEVICE=png16m -dFirstPage=1 -dLastPage=1 -dTextAlphaBits=4 -dGraphicsAlphaBits=4 -sOutputFile=output.png input.pdf
 }
 
 function pdfpextr ()
@@ -156,6 +158,17 @@ function pdfpextr ()
        -dLastPage=${2} \
        -sOutputFile=${3%.pdf}_p${1}-p${2}.pdf \
        ${3}
+}
+
+rasterizePDF() {
+	echo "Usage: rasterizePDF fromfile.pdf : this makes a 300dpi raster version. And optimizes it with ghostscript. Output is fromfile.pdf-scanned.pdf"
+	tmpfile=$(mktemp).pdf
+	echo "Creating raster version... (in $tmpfile)"
+	convert -render -density 300 $1 $tmpfile
+	echo "Optimizing to shrink pdf file..."
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$1-scanned.pdf $tmpfile
+	evince $1-scanned.pdf&
+	echo "Finished; launched viewer."
 }
 
 function acp () {

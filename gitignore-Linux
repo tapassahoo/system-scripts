@@ -26,6 +26,7 @@ node_modules
 ~/academic-project/MoRiBS-PIGS/examples/scripts/*.txt
 exact-energies-of-H2O/
 Results-p-H2O/
+tmp.*
 test.*
 test1.*
 *.dep
