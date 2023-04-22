@@ -365,6 +365,8 @@ cpdf () {
 
 function pdfextractor () {
 	gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage="${1}" -dLastPage="${2}" -sOutputFile="${3%.pdf}_p${1}-p${2}.pdf" "${3}"
+	# gs -dNOPAUSE -dBATCH -sDEVICE=png16m –dFirstPage=3 –dLastPage=4 -sOutputFile="Pic-%d.png" input.pdf
+	# gs -dSAFER -dBATCH -dNOPAUSE -r300 -sDEVICE=png16m -dFirstPage=1 -dLastPage=1 -dTextAlphaBits=4 -dGraphicsAlphaBits=4 -sOutputFile=output.png input.pdf
 }
 export pdfextractor
 
@@ -380,6 +382,17 @@ function pdfpextr ()
        -dLastPage=${2} \
        -sOutputFile=${3%.pdf}_p${1}-p${2}.pdf \
        ${3}
+}
+
+rasterizePDF() {
+	echo "Usage: rasterizePDF fromfile.pdf : this makes a 300dpi raster version. And optimizes it with ghostscript. Output is raster-fromfile.pdf"
+	tmpfile=$(mktemp).pdf
+	echo "Creating raster version... (in $tmpfile)"
+	convert -render -density $1 $2 $tmpfile
+	echo "Optimizing to shrink pdf file..."
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=raster-$2 $tmpfile
+	evince raster-$2 &
+	echo "Finished; launched viewer."
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
