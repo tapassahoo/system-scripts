@@ -330,6 +330,7 @@ alias downloadhistory="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.Qu
 alias deletedownloadhistry="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 alias iCloudBackup='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
 alias fastbackup='sudo sysctl debug.lowpri_throttle_enabled=1'
+alias checktemp='sudo powermetrics --samplers smc |grep -i "CPU die temperature"'
 
 # Internet Connection
 alias pingapple='ping -c 10 www.apple.com'
