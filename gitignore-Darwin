@@ -62,3 +62,5 @@ password*
 *Notes.bib
 *.md5
 *.fdb_latexmk
+*-evaluation-figure*.pdf
+*.synctex.gz
