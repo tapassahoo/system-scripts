@@ -22,10 +22,11 @@
 # 
 # m h  dom mon dow   command
 
+################################### Below three lines are compulsory
 0 0 * * *  rm -rf ${HOME}/Logs/* 
 0 8-18/2 * * *  /usr/local/bin/pull-data.sh >> ${HOME}/Logs/pull-data.log 2>&1
 0 8-18/2 * * *  /usr/local/bin/push-system-scripts.sh >> ${HOME}/Logs/push-github.log 2>&1
-#
+###################################
 #
 ################################### Analysis Blosck=10000; Pass=500
  0 0 28 * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 2 0.1 10000 500 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
