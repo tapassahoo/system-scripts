@@ -27,6 +27,7 @@ sed -i "s/\<INPUT_PARAMETER_VALUE\>/$parameter_value/" temp_execution_moribs_dri
 sed -i "s/\<INPUT_NUMB_BLOCK\>/$numb_block/" temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py
 sed -i "s/\<INPUT_NUMB_PASS\>/$numb_pass/" temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py
 sed -i "s/\<INPUT_NUMB_PRESKIP\>/$preskip_value/" temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py
+pyenvs
 python temp_execution_moribs_driver_linear_molecule_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mc_blocks${numb_block}_mc_passes${numb_pass}_nskip${preskip_value}_${job_type}.py > ${HOME}/final-pigs-outputs-for-plotting/moribs_${job_type}_n${numb_molecule}HF_beta${parameter_value}inverse_kelvin_mcblocks${numb_block}_mcpasses${numb_pass}_nskip${preskip_value}.log &
 
 pwd
