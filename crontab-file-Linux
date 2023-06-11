@@ -300,7 +300,7 @@
 50 1 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 20 0.2 5000 200 1000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
 #
 #
-50 11 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 25 0.1 5000 200 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
+ 0 2 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 25 0.1 5000 200 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
 20 2 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 25 0.1 5000 200 1000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
 #
 30 2 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 25 0.2 5000 200 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
