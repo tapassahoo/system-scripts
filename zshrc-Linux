@@ -207,6 +207,8 @@ function acpall () {
   rsync -r ~/.vimrc ${HOME}/academic-project/system-scripts/vimrc-script-$(uname)
   rsync -r ~/.zshrc ${HOME}/academic-project/system-scripts/zshrc-$(uname)
   rsync -r ~/.gitignore ${HOME}/academic-project/system-scripts/gitignore-$(uname)
+  rsync -r /usr/local/bin/push-system-scripts.sh ${HOME}/academic-project/system-scripts/push-system-scripts-$(uname).sh
+  rsync -r /usr/local/bin/pull-data.sh ${HOME}/academic-project/system-scripts/pull-data-$(uname).sh
   crontab -l > ${HOME}/academic-project/system-scripts/crontab-$(uname)
 #
   git -C ~/academic-project/system-scripts add .
