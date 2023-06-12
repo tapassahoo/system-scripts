@@ -10,7 +10,7 @@ cp ~/.gitignore  ${HOME}/academic-project/system-scripts/gitignore-$(uname)
 cp ~/.ssh/config ${HOME}/academic-project/system-scripts/ssh-config-$(uname)
 #
 cp -r /usr/local/bin/push-system-scripts.sh ${HOME}/academic-project/system-scripts/push-system-scripts-$(uname).sh
-cp -r /usr/local/bin/pull-data-from-graham.sh ${HOME}/academic-project/system-scripts/pull-data-from-graham-$(uname).sh
+cp -r /usr/local/bin/pull-data.sh ${HOME}/academic-project/system-scripts/pull-data-$(uname).sh
 #
 crontab -l > ${HOME}/academic-project/system-scripts/crontab-file-$(uname)
 
