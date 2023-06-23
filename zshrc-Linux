@@ -371,6 +371,8 @@ alias sshcedar='ssh -X cedar'
 alias sshsnbncbs='ssh -X snbncbs'
 alias shutdown='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
+alias sshfsmount='sshfs graham:/home/tapas/academic-writting/write-ups-for-journals/article-snbncbs/template-for-molecular-physics /home/tapas/remote-files'
+alias sshfsumount='umount /home/tapas/remote-files'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
