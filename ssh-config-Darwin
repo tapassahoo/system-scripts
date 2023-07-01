@@ -5,18 +5,18 @@ Host *
   ForwardX11 no
   #XAuthLocation /opt/X11/bin/xauth
 
-#Host graham
-#  HostName graham.computecanada.ca
-#  User tapas
+Host graham
+  HostName graham.computecanada.ca
+  User tapas
 
 Host cedar
   HostName cedar.computecanada.ca
   User tapas
 
-Host graham
-  HostName graham.computecanada.ca
-  ProxyCommand ssh -X cedar -W %h:%p
-  User tapas
+#Host graham
+#  HostName graham.computecanada.ca
+#  ProxyCommand ssh -X cedar -W %h:%p
+#  User tapas
 
 Host nlogn
   HostName nlogn.uwaterloo.ca
