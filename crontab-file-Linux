@@ -280,7 +280,7 @@
  4 8 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh analysis 14 0.1 5000 200 0 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
  5 8 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh analysis 14 0.1 5000 200 1000 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
 #
- 6 8 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh analysis 14 1.2 5000 200 0 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
+ 6 8 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh analysis 14 0.2 5000 200 0 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
  7 8 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh analysis 14 0.2 5000 200 1000 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
 #
 #
