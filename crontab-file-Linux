@@ -251,27 +251,6 @@
 #
 30 8 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 29 0.2 5000 200 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
 50 8 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 29 0.2 5000 200 1000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-#
-#
- 0 13 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 27 0.1 5000 200 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-20 13 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 27 0.1 5000 200 1000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-#
-30 13 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 27 0.2 5000 200 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-50 13 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 27 0.2 5000 200 1000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-#
-#
- 0 14 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 28 0.1 5000 200 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-20 14 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 28 0.1 5000 200 1000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-#
-30 14 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 28 0.2 5000 200 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-50 14 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 28 0.2 5000 200 1000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-#
-#
- 0 15 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 29 0.1 5000 200 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-20 15 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 29 0.1 5000 200 1000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-#
-30 15 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 29 0.2 5000 200 0 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
-50 15 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 29 0.2 5000 200 1000 >> ${HOME}/Logs/push-scheduled-task.log 2>&1
 ################################### Remove N=(13, 14, 22, 23, 24, 26, 27, 28, 29)
  0 8 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh analysis 13 0.1 5000 200 0 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
  1 8 * * * ssh cedar 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_cleaning.sh analysis 13 0.1 5000 200 1000 >> ${HOME}/Logs/scheduled-cleaning.log 2>&1
