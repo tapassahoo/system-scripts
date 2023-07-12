@@ -346,6 +346,11 @@ export LC_CTYPE="en_US.UTF-8"
 export PATH="/Users/tapas/Library/Python/3.9/bin:$PATH"
 alias pyenvs='source ~/venv/bin/activate'
 
+pdftoeps(){
+	echo 'Usage: pdftoeps [input file] [output file]'	
+	gs -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -sDEVICE=eps2write -sOutputFile="$2" "$1"
+}
+
 pdftojpeg(){
 	echo 'Usage: pdftojpeg [input file] [output file]'	
 	convert -density 300 -trim "$1" -quality 100 "$2"
