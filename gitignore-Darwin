@@ -64,3 +64,4 @@ password*
 *.fdb_latexmk
 *-evaluation-figure*.pdf
 *.synctex.gz
+*-eps-converted-to.pdf
