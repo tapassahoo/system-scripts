@@ -267,13 +267,13 @@ function acpall () {
   echo "The git directory is ~/academic-project/learning-testing"
   echo "*****************************************************************************"
 #
-#  git -C ~/academic-project/output add .
-#  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-#  git -C ~/academic-project/output push
-#  echo ""
-#  echo "The git directory is ~/academic-project/output"
-#  echo "*****************************************************************************"
-##
+  git -C ~/academic-project/output add .
+  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/output push
+  echo ""
+  echo "The git directory is ~/academic-project/output"
+  echo "*****************************************************************************"
+#
 #  git -C ~/Documents/backup add .
 #  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
 #  git -C ~/Documents/backup push
@@ -341,11 +341,11 @@ function ghall () {
   echo "The git directory is ~/academic-project/learning-testing"
   echo "*****************************************************************************"
 #
-#  git -C ~/academic-project/output "$1"
-#  echo ""
-#  echo "The git directory is ~/academic-project/output"
-#  echo "*****************************************************************************"
-##
+  git -C ~/academic-project/output "$1"
+  echo ""
+  echo "The git directory is ~/academic-project/output"
+  echo "*****************************************************************************"
+#
 #  git -C ~/Documents/backup "$1"
 #  echo ""
 #  echo "The git directory is ~/Documents/backup"
