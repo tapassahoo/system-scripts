@@ -403,3 +403,8 @@ function mathpix () {
 cd ~/.
 ./Mathpix_Snipping_Tool-x86_64.v03.00.0093.AppImage &
 }
+
+function mountgoogle () {
+cd ~/.
+google-drive-ocamlfuse ~/myGoogleDrive
+}
