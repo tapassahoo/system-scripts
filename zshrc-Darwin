@@ -186,18 +186,25 @@ function acpall () {
   echo "The git directory is ~/academic-project/quantum-chemistry-project"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/output add .
-  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/output push
-  echo ""
-  echo "The git directory is ~/academic-project/output"
-  echo "*****************************************************************************"
+#  git -C ~/academic-project/output add .
+#  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+#  git -C ~/academic-project/output push
+#  echo ""
+#  echo "The git directory is ~/academic-project/output"
+#  echo "*****************************************************************************"
+##
+#  git -C ~/Documents/backup add .
+#  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+#  git -C ~/Documents/backup push
+#  echo ""
+#  echo "The git directory is ~/Documents/backup"
+#  echo "*****************************************************************************"
 #
-  git -C ~/Documents/backup add .
-  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/Documents/backup push
+  git -C ~/Documents/personal-docs add .
+  git -C ~/Documents/personal-docs commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/Documents/personal-docs push
   echo ""
-  echo "The git directory is ~/Documents/backup"
+  echo "The git directory is ~/Documents/personal-docs"
   echo "*****************************************************************************"
 }
 
@@ -252,14 +259,19 @@ function ghall () {
   echo "The git directory is ~/academic-project/quantum-chemistry-project"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/output "$1"
-  echo ""
-  echo "The git directory is ~/academic-project/output"
-  echo "*****************************************************************************"
+#  git -C ~/academic-project/output "$1"
+#  echo ""
+#  echo "The git directory is ~/academic-project/output"
+#  echo "*****************************************************************************"
+##
+#  git -C ~/Documents/backup "$1"
+#  echo ""
+#  echo "The git directory is ~/Documents/backup"
+#  echo "*****************************************************************************"
 #
-  git -C ~/Documents/backup "$1"
+  git -C ~/Documents/personal-docs "$1"
   echo ""
-  echo "The git directory is ~/Documents/backup"
+  echo "The git directory is ~/Documents/personal-docs"
   echo "*****************************************************************************"
 }
 
