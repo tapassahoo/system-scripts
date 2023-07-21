@@ -288,6 +288,12 @@ function acpall () {
   echo "The git directory is ~/Documents/personal-docs"
   echo "*****************************************************************************"
 #
+  git -C ~/academic-project/analytic-calculation-by-mathematica add .
+  git -C ~/academic-project/analytic-calculation-by-mathematica commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/analytic-calculation-by-mathematica push
+  echo ""
+  echo "The git directory is ~/academic-project/analytic-calculation-by-mathematica"
+  echo "*****************************************************************************"
 }
 
 function ghall () {
@@ -354,6 +360,11 @@ function ghall () {
   git -C ~/Documents/personal-docs "$1"
   echo ""
   echo "The git directory is ~/Documents/personal-docs"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/analytic-calculation-by-mathematica "$1"
+  echo ""
+  echo "The git directory is ~/academic-project/analytic-calculation-by-mathematica"
   echo "*****************************************************************************"
 }
 
