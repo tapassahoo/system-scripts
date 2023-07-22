@@ -144,6 +144,13 @@ function acpall () {
   echo "The git directory is ~/academic-writting"
   echo "*****************************************************************************"
 #
+  git -C ~/academic-project/code-tester add .
+  git -C ~/academic-project/code-tester commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/code-tester push
+  echo ""
+  echo "The git directory is ~/academic-project/code-tester"
+  echo "*****************************************************************************"
+#
   git -C ~/academic-project/general-code add .
   git -C ~/academic-project/general-code commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/general-code push
@@ -220,6 +227,11 @@ function ghall () {
   git -C ~/academic-writting "$1"
   echo ""
   echo "The git directory is ~/academic-writting"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/code-tester "$1"
+  echo ""
+  echo "The git directory is ~/academic-project/code-tester"
   echo "*****************************************************************************"
 #
   git -C ~/academic-project/general-code "$1"

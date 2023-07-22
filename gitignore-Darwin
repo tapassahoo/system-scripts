@@ -20,7 +20,7 @@ Thumbs.db
 venv
 node_modules
 .sass-cache
-
+!project-git
 personal-records/marksheets-certificates/test.pdf
 exact-energies-of-H2O/
 Results-p-H2O/
