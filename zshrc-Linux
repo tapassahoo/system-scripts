@@ -287,6 +287,13 @@ function acpall () {
   echo ""
   echo "The git directory is ~/Documents/personal-docs"
   echo "*****************************************************************************"
+#
+  git -C ~/Documents/backup add .
+  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/Documents/backup push
+  echo ""
+  echo "The git directory is ~/Documents/backup"
+  echo "*****************************************************************************"
 }
 
 function ghall () {
@@ -353,6 +360,11 @@ function ghall () {
   git -C ~/Documents/personal-docs "$1"
   echo ""
   echo "The git directory is ~/Documents/personal-docs"
+  echo "*****************************************************************************"
+#
+  git -C ~/Documents/backup "$1"
+  echo ""
+  echo "The git directory is ~/Documents/backup"
   echo "*****************************************************************************"
 }
 
