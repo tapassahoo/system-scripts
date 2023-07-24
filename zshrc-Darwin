@@ -211,7 +211,7 @@ function acpall () {
   git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/Documents/backup push
   echo ""
-  echo "The git directory is ~/Documents/backup-for-vimwiki"
+  echo "The git directory is ~/Documents/backup"
   echo "*****************************************************************************"
 }
 
