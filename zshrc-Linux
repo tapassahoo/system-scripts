@@ -225,6 +225,20 @@ function acpall () {
   echo "The git directory is ~/academic-writting"
   echo "*****************************************************************************"
 #
+  git -C ~/academic-project/code-tester add .
+  git -C ~/academic-project/code-tester commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/code-tester push
+  echo ""
+  echo "The git directory is ~/academic-project/learning-testing"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/analytic-calculation-by-mathematica add .
+  git -C ~/academic-project/analytic-calculation-by-mathematica commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/analytic-calculation-by-mathematica push
+  echo ""
+  echo "The git directory is ~/academic-project/analytic-calculation-by-mathematica"
+  echo "*****************************************************************************"
+#
   git -C ~/academic-project/general-code add .
   git -C ~/academic-project/general-code commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/general-code push
@@ -237,6 +251,13 @@ function acpall () {
   git -C ~/academic-project/pkg_plot push
   echo ""
   echo "The git directory is ~/academic-project/pkg_plot"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/output add .
+  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/academic-project/output push
+  echo ""
+  echo "The git directory is ~/academic-project/output"
   echo "*****************************************************************************"
 #
   git -C ~/academic-project/scripts-for-plotting-data add .
@@ -260,39 +281,11 @@ function acpall () {
   echo "The git directory is ~/academic-project/quantum-chemistry-project"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/learning-testing add .
-  git -C ~/academic-project/learning-testing commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/learning-testing push
-  echo ""
-  echo "The git directory is ~/academic-project/learning-testing"
-  echo "*****************************************************************************"
-#
-  git -C ~/academic-project/output add .
-  git -C ~/academic-project/output commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/output push
-  echo ""
-  echo "The git directory is ~/academic-project/output"
-  echo "*****************************************************************************"
-#
-#  git -C ~/Documents/backup add .
-#  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-#  git -C ~/Documents/backup push
-#  echo ""
-#  echo "The git directory is ~/Documents/backup"
-#  echo "*****************************************************************************"
-#
   git -C ~/Documents/personal-docs add .
   git -C ~/Documents/personal-docs commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/Documents/personal-docs push
   echo ""
   echo "The git directory is ~/Documents/personal-docs"
-  echo "*****************************************************************************"
-#
-  git -C ~/academic-project/analytic-calculation-by-mathematica add .
-  git -C ~/academic-project/analytic-calculation-by-mathematica commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/academic-project/analytic-calculation-by-mathematica push
-  echo ""
-  echo "The git directory is ~/academic-project/analytic-calculation-by-mathematica"
   echo "*****************************************************************************"
 }
 
@@ -317,6 +310,16 @@ function ghall () {
   echo "The git directory is ~/academic-writting"
   echo "*****************************************************************************"
 #
+  git -C ~/academic-project/code-tester "$1"
+  echo ""
+  echo "The git directory is ~/academic-project/code-tester"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/analytic-calculation-by-mathematica "$1"
+  echo ""
+  echo "The git directory is ~/academic-project/analytic-calculation-by-mathematica"
+  echo "*****************************************************************************"
+#
   git -C ~/academic-project/general-code "$1"
   echo ""
   echo "The git directory is ~/academic-project/general-code"
@@ -325,6 +328,11 @@ function ghall () {
   git -C ~/academic-project/pkg_plot "$1"
   echo ""
   echo "The git directory is ~/academic-project/pkg_plot"
+  echo "*****************************************************************************"
+#
+  git -C ~/academic-project/output "$1"
+  echo ""
+  echo "The git directory is ~/academic-project/output"
   echo "*****************************************************************************"
 #
   git -C ~/academic-project/scripts-for-plotting-data "$1"
@@ -342,29 +350,9 @@ function ghall () {
   echo "The git directory is ~/academic-project/quantum-chemistry-project"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/learning-testing "$1"
-  echo ""
-  echo "The git directory is ~/academic-project/learning-testing"
-  echo "*****************************************************************************"
-#
-  git -C ~/academic-project/output "$1"
-  echo ""
-  echo "The git directory is ~/academic-project/output"
-  echo "*****************************************************************************"
-#
-#  git -C ~/Documents/backup "$1"
-#  echo ""
-#  echo "The git directory is ~/Documents/backup"
-#  echo "*****************************************************************************"
-#
   git -C ~/Documents/personal-docs "$1"
   echo ""
   echo "The git directory is ~/Documents/personal-docs"
-  echo "*****************************************************************************"
-#
-  git -C ~/academic-project/analytic-calculation-by-mathematica "$1"
-  echo ""
-  echo "The git directory is ~/academic-project/analytic-calculation-by-mathematica"
   echo "*****************************************************************************"
 }
 
