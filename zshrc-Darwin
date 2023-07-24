@@ -207,9 +207,9 @@ function acpall () {
   echo "The git directory is ~/Documents/personal-docs"
   echo "*****************************************************************************"
 #
-  git -C ~/Documents/backup-for-vimwiki add .
-  git -C ~/Documents/backup-for-vimwiki commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
-  git -C ~/Documents/backup-for-vimwiki push
+  git -C ~/Documents/backup add .
+  git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/Documents/backup push
   echo ""
   echo "The git directory is ~/Documents/backup-for-vimwiki"
   echo "*****************************************************************************"
@@ -281,9 +281,9 @@ function ghall () {
   echo "The git directory is ~/Documents/personal-docs"
   echo "*****************************************************************************"
 #
-  git -C ~/Documents/backup-for-vimwiki "$1"
+  git -C ~/Documents/backup "$1"
   echo ""
-  echo "The git directory is ~/Documents/backup-for-vimwiki"
+  echo "The git directory is ~/Documents/backup"
   echo "*****************************************************************************"
 }
 
