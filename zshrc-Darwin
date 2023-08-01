@@ -414,13 +414,13 @@ function pdfpextr ()
 }
 
 rasterizePDF() {
-	echo "Usage: rasterizePDF fromfile.pdf : this makes a 300dpi raster version. And optimizes it with ghostscript. Output is raster-fromfile.pdf"
+	echo "Usage: rasterizePDF xdpi fromfile.pdf : this makes a xdpi raster version. And optimizes it with ghostscript. Output is raster-fromfile.pdf"
 	tmpfile=$(mktemp).pdf
 	echo "Creating raster version... (in $tmpfile)"
 	convert -render -density $1 $2 $tmpfile
 	echo "Optimizing to shrink pdf file..."
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=raster-$2 $tmpfile
-	evince raster-$2 &
+	open raster-$2 &
 	echo "Finished; launched viewer."
 }
 
