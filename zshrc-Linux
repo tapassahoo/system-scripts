@@ -419,3 +419,4 @@ function mountgoogle () {
 cd ~/.
 google-drive-ocamlfuse ~/myGoogleDrive
 }
+export PATH="$HOME/orca:$PATH"; export LD_LIBRARY_PATH="$HOME/orca:$LD_LIBRARY_PATH"
