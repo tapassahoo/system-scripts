@@ -207,6 +207,13 @@ function acpall () {
   echo "The git directory is ~/Documents/personal-docs"
   echo "*****************************************************************************"
 #
+  git -C ~/Documents/Lecture-Notes add .
+  git -C ~/Documents/Lecture-Notes commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/Documents/Lecture-Notes push
+  echo ""
+  echo "The git directory is ~/Documents/Lecture-Notes"
+  echo "*****************************************************************************"
+#
   git -C ~/Documents/backup add .
   git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/Documents/backup push
@@ -279,6 +286,11 @@ function ghall () {
   git -C ~/Documents/personal-docs "$1"
   echo ""
   echo "The git directory is ~/Documents/personal-docs"
+  echo "*****************************************************************************"
+#
+  git -C ~/Documents/Lecture-Notes "$1"
+  echo ""
+  echo "The git directory is ~/Documents/Lecture-Notes"
   echo "*****************************************************************************"
 #
   git -C ~/Documents/backup "$1"
