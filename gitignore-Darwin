@@ -66,3 +66,4 @@ password*
 *.synctex.gz
 *-eps-converted-to.pdf
 !*.tex
+!*.jpeg
