@@ -70,3 +70,4 @@ talk-for-annual-evaluation-figure*.pdf
 *.emergency
 *-eps-converted-to.pdf
 !*.tex
+!*.jpeg
