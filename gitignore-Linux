@@ -71,3 +71,4 @@ talk-for-annual-evaluation-figure*.pdf
 *-eps-converted-to.pdf
 !*.tex
 !*.jpeg
+!*.lyx
