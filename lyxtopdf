@@ -1,0 +1,9 @@
+#!/bin/bash
+lyx --export pdf ${HOME}/academic-writting/lyx-docs/quantum-treatment/linear-operators.lyx
+echo ""
+echo ""
+echo "lyxtopdf" `date`
+
+mv ${HOME}/academic-writting/lyx-docs/quantum-treatment/linear-operators.pdf ${HOME}/Documents/teaching-materials/QMC/
+
+
