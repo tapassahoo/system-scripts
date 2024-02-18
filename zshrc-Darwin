@@ -305,6 +305,11 @@ function ghall () {
   echo "The git directory is ~/Documents/teaching-materials"
   echo "*****************************************************************************"
 #
+  git -C ~/Documents/lecture-notes-msc-nitrr "$1"
+  echo ""
+  echo "The git directory is ~/Documents/lecture-notes-msc-nitrr"
+  echo "*****************************************************************************"
+#
   git -C ~/Documents/backup "$1"
   echo ""
   echo "The git directory is ~/Documents/backup"
