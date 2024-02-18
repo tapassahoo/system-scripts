@@ -221,6 +221,13 @@ function acpall () {
   echo "The git directory is ~/Documents/teaching-materials"
   echo "*****************************************************************************"
 #
+  git -C ~/Documents/lecture-notes-msc-nitrr add .
+  git -C ~/Documents/lecture-notes-msc-nitrr commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
+  git -C ~/Documents/lecture-notes-msc-nitrr push
+  echo ""
+  echo "The git directory is ~/Documents/lecture-notes-msc-nitrr"
+  echo "*****************************************************************************"
+#
   git -C ~/Documents/backup add .
   git -C ~/Documents/backup commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/Documents/backup push
