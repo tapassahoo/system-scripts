@@ -27,3 +27,12 @@ Host feynman
   HostName feynman.uwaterloo.ca
   ProxyCommand ssh -X nlogn -W %h:%p
   User tapas
+
+Host pcsa
+  HostName 202.54.54.238
+  User tapas
+
+Host saikat
+  HostName 192.168.31.11
+  ProxyCommand ssh -X pcsa -W %h:%p
+  User saikat
