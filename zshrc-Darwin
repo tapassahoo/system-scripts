@@ -382,6 +382,7 @@ alias sshfeynman='ssh -X feynman'
 alias sshgraham='ssh -X graham'
 alias sshcedar='ssh -X cedar'
 alias sshpcsa='ssh -X pcsa'
+alias sshtapas='ssh -X tapas'
 alias shutdown='sudo shutdown -h now'
 alias restart='sudo shutdown -r now'
 

@@ -35,7 +35,7 @@ Host pcsa
   HostName 202.54.54.238
   User pcsa
 
-Host saikat
+Host tapas
   HostName 192.168.31.11
   ProxyCommand ssh pcsa -W %h:%p
-  User saikat
+  User tapas
