@@ -1,4 +1,7 @@
 Host *
+  KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+  PubkeyAcceptedAlgorithms +ssh-rsa 
+  HostKeyAlgorithms +ssh-rsa 
   ServerAliveInterval 30
   ServerAliveCountMax 1200
   TCPKeepAlive=no
@@ -30,9 +33,9 @@ Host feynman
 
 Host pcsa
   HostName 202.54.54.238
-  User tapas
+  User pcsa
 
 Host saikat
   HostName 192.168.31.11
-  ProxyCommand ssh -X pcsa -W %h:%p
+  ProxyCommand ssh pcsa -W %h:%p
   User saikat
