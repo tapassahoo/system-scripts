@@ -264,3 +264,4 @@ autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!clear; python3' sh
 
 set lines=170 " for height of the window
 set columns=180 " for width of the window
+set rtp+=/usr/local/opt/fzf
