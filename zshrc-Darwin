@@ -415,7 +415,7 @@ pdftoeps(){
 
 pdftojpeg(){
 	echo 'Usage: pdftojpeg [input file] [output file]'	
-	convert -density 300 -trim "$1" -quality 100 "$2"
+	magick convert -density 100 -trim "$1" -quality 100 "$2"
 }
 compresspdf () {
     echo 'Usage: compresspdf [input file] [output file] [screen|ebook|printer|prepress]'
