@@ -10,9 +10,6 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
-# Compiled Python files
-*.pyc
-
 # Compiled C++ files
 *.out
 
@@ -67,3 +64,6 @@ password*
 *-eps-converted-to.pdf
 !*.tex
 !*.jpeg
+# MoRiBS project
+temp_file_for_execution*
+temp_0_*

@@ -496,3 +496,4 @@ alias killpimc=$'kill -09 `ps ax|grep pimc|awk "{print $1}"`'
 #For compilers to find libomp you may need to set:
 export LDFLAGS="-L/usr/local/opt/libomp/lib"
 export CPPFLAGS="-I/usr/local/opt/libomp/include"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
