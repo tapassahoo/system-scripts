@@ -405,8 +405,8 @@ alias networkIP='ipconfig getifaddr en0'
 
 export LC_CTYPE="en_US.UTF-8"
 
-export PATH="/Users/tapas/Library/Python/3.12/bin:$PATH"
-alias pyenvs='source ~/venv/bin/activate'
+export PATH="/usr/local/bin:$PATH"
+alias pyenvs='source ~/pyenvs3.13/bin/activate'
 
 pdftoeps(){
 	echo 'Usage: pdftoeps [input file] [output file]'	
