@@ -256,6 +256,11 @@ set guifont=Monaco:h12
 
 hi VimwikiLink term=underline ctermfg=blue guifg=cyan gui=underline
 let g:vimwiki_list = [{'path': '$HOME/vimwiki'}]
+let g:vimwiki_browser = 'open'
+"let g:vimwiki_use_calendar = 1
+" let g:vimwiki_file_exts = ['.wiki', '.md']
+
+
 
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!clear; python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!clear; python3' shellescape(@%, 1)<CR>
