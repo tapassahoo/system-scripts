@@ -509,3 +509,5 @@ alias killpimc=$'kill -09 `ps ax|grep pimc|awk "{print $1}"`'
 export LDFLAGS="-L/usr/local/opt/libomp/lib"
 export CPPFLAGS="-I/usr/local/opt/libomp/include"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+export DICPATH=/usr/share/hunspell
