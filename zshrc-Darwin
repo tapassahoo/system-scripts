@@ -523,3 +523,7 @@ export CPPFLAGS="-I/usr/local/opt/libomp/include"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 export DICPATH=/usr/share/hunspell
+
+# ORCA 6.0.1 secion
+export PATH=/Users/tapas/Library/orca_6_0_1:$PATH
+
