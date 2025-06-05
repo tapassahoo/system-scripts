@@ -1,17 +1,17 @@
 #@reboot /usr/local/bin/remove-logs.sh > /dev/null 2>&1
-#0 8-22/2 * * *  /usr/local/bin/pull-data-from-plot.sh >> /Users/tsahoo/Library/Logs/pull-data-from-graham.log 2>&1
-#0 8-22/2 * * *  /usr/local/bin/pull-data-from-graham.sh >> /Users/tsahoo/Library/Logs/pull-data-from-graham.log 2>&1
-#0 8-22/2 * * *  /usr/local/bin/pull-data-from-cedar.sh >> /Users/tsahoo/Library/Logs/pull-data-from-cedar.log 2>&1
-#0 8-22/2 * * *  /usr/local/bin/pull-data-from-feynman.sh >> /Users/tsahoo/Library/Logs/pull-data-from-feynman.log 2>&1
-0 8-22/2 * * *  /usr/local/bin/push-system-scripts.sh >> /Users/tsahoo/Library/Logs/push-github.log 2>&1
-#0 8-22/2 * * *  /usr/local/bin/push-data-pcsa.sh >> /Users/tsahoo/Library/Logs/push-data-pcsa.log 2>&1
+#0 8-22/2 * * *  /usr/local/bin/pull-data-from-plot.sh >> /Users/tapas/Library/Logs/pull-data-from-graham.log 2>&1
+#0 8-22/2 * * *  /usr/local/bin/pull-data-from-graham.sh >> /Users/tapas/Library/Logs/pull-data-from-graham.log 2>&1
+#0 8-22/2 * * *  /usr/local/bin/pull-data-from-cedar.sh >> /Users/tapas/Library/Logs/pull-data-from-cedar.log 2>&1
+#0 8-22/2 * * *  /usr/local/bin/pull-data-from-feynman.sh >> /Users/tapas/Library/Logs/pull-data-from-feynman.log 2>&1
+0 8-22/2 * * *  /usr/local/bin/push-system-scripts.sh >> /Users/tapas/Library/Logs/push-github.log 2>&1
+#0 8-22/2 * * *  /usr/local/bin/push-data-pcsa.sh >> /Users/tapas/Library/Logs/push-data-pcsa.log 2>&1
 ##
-#@reboot /usr/local/bin/pull-data-from-plot.sh >> /Users/tsahoo/Library/Logs/pull-data-from-graham.log 2>&1
-#@reboot /usr/local/bin/pull-data-from-graham.sh >> /Users/tsahoo/Library/Logs/pull-data-from-graham.log 2>&1
-#@reboot /usr/local/bin/pull-data-from-cedar.sh >> /Users/tsahoo/Library/Logs/pull-data-from-cedar.log 2>&1
-#@reboot /usr/local/bin/pull-data-from-feynman.sh >> /Users/tsahoo/Library/Logs/pull-data-from-feynman.log 2>&1
-@reboot /usr/local/bin/push-system-scripts.sh >> /Users/tsahoo/Library/Logs/push-github.log 2>&1
-#*/30 * * * *  /usr/local/bin/push_article_uw.sh >> /Users/tsahoo/Library/Logs/push_article_uw.log 2>&1
+#@reboot /usr/local/bin/pull-data-from-plot.sh >> /Users/tapas/Library/Logs/pull-data-from-graham.log 2>&1
+#@reboot /usr/local/bin/pull-data-from-graham.sh >> /Users/tapas/Library/Logs/pull-data-from-graham.log 2>&1
+#@reboot /usr/local/bin/pull-data-from-cedar.sh >> /Users/tapas/Library/Logs/pull-data-from-cedar.log 2>&1
+#@reboot /usr/local/bin/pull-data-from-feynman.sh >> /Users/tapas/Library/Logs/pull-data-from-feynman.log 2>&1
+@reboot /usr/local/bin/push-system-scripts.sh >> /Users/tapas/Library/Logs/push-github.log 2>&1
+#*/30 * * * *  /usr/local/bin/push_article_uw.sh >> /Users/tapas/Library/Logs/push_article_uw.log 2>&1
 #
 #0 12 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 5 0.1 0 >> ${HOME}/Library/Logs/push-scheduled-task.log 2>&1
 #30 12 * * * ssh graham 'bash -s' < ${HOME}/academic-project/system-scripts/scheduled_task.sh analysis 5 0.1 10000 >> ${HOME}/Library/Logs/push-scheduled-task.log 2>&1
