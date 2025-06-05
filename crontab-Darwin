@@ -1,4 +1,4 @@
-#@reboot /usr/local/bin/remove-logs.sh > /dev/null 2>&1
+@reboot /usr/local/bin/remove-logs.sh > /dev/null 2>&1
 #0 8-22/2 * * *  /usr/local/bin/pull-data-from-plot.sh >> /Users/tapas/Library/Logs/pull-data-from-graham.log 2>&1
 #0 8-22/2 * * *  /usr/local/bin/pull-data-from-graham.sh >> /Users/tapas/Library/Logs/pull-data-from-graham.log 2>&1
 #0 8-22/2 * * *  /usr/local/bin/pull-data-from-cedar.sh >> /Users/tapas/Library/Logs/pull-data-from-cedar.log 2>&1
