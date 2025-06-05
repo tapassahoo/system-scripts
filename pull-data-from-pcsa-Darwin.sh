@@ -1,12 +1,27 @@
 #!/bin/bash
 SHELL=/bin/bash
 
-echo -e "\n\nCRON: $(date)"
-set -xv
+# Timestamp for cron run
+echo -e "\n\n[CRON] Started at: $(date)"
+set -xv  # Debug mode with verbose output
 
-REMOTE_BASE="pcsa:/home/pcsa/backup-sync/project1"
-LOCAL_BASE="${HOME}/academic-project/quantum-chemistry-project/project1"
+#-------------------------------
+# Sync output data from remote
+#-------------------------------
+REMOTE_OUTPUT="pcsa:/home/pcsa/backup-sync/project2/output/"
+LOCAL_OUTPUT="${HOME}/academic-project/output-orca/structural-analysis-HFChain/"
 
-#rsync -avze ssh "${REMOTE_BASE}/src/structural-analysis/" "${LOCAL_BASE}/src/structural-analysis/"
-rsync -avze ssh "${REMOTE_BASE}/output/structural-analysis/*" "${LOCAL_BASE}/output/structural-analysis/"
+rsync -avz -e ssh \
+  --exclude='**/*.*.tmp.*' \
+  --exclude='**/*.*tmp' \
+  "$REMOTE_OUTPUT" "$LOCAL_OUTPUT"
+
+#-------------------------------
+# Sync source scripts from remote
+#-------------------------------
+#REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/project2/src/structural-analysis/"
+#LOCAL_SCRIPTS="${HOME}/academic-project/quantum-chemistry-project/project2/src/structural-analysis/"
+
+#rsync -avz -e ssh "$REMOTE_SCRIPTS" "$LOCAL_SCRIPTS"
+
 

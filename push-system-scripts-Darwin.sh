@@ -3,6 +3,8 @@ echo ""
 echo ""
 echo "CRON:" `date`
 set -xv
+rsync -r /usr/local/bin/pull-data-from-pcsa.sh ${HOME}/academic-project/system-scripts/pull-data-from-pcsa-$(uname).sh 
+rsync -r /usr/local/bin/push-data-to-pcsa.sh ${HOME}/academic-project/system-scripts/push-data-to-pcsa-$(uname).sh 
 rsync -r /usr/local/bin/pull-data-from-graham.sh ${HOME}/academic-project/system-scripts/pull-data-from-graham-$(uname).sh 
 rsync -r /usr/local/bin/pull-data-from-cedar.sh ${HOME}/academic-project/system-scripts/pull-data-from-cedar-$(uname).sh
 rsync -r /usr/local/bin/pull-data-from-feynman.sh ${HOME}/academic-project/system-scripts/pull-data-from-feynman-$(uname).sh
