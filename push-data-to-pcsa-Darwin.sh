@@ -19,10 +19,23 @@ rsync -avz -e ssh \
 #-------------------------------------------
 # Push source scripts of project2 to remote
 #-------------------------------------------
-LOCAL_SCRIPTS="${HOME}/academic-project/quantum-chemistry-project/project2/src/structural-analysis/script_run_all_orca_serial_jobs_concurrently_general.py"
-REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/project2/src/structural-analysis/"
+#LOCAL_SCRIPTS="${HOME}/academic-project/quantum-chemistry-project/project2/src/structural-analysis/script_run_all_orca_serial_jobs_concurrently_general.py"
+#REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/project2/src/structural-analysis/"
+
+#rsync -avz -e ssh \
+#  --exclude='**/*.*.tmp.*' \
+#  --exclude='**/*.*tmp' \
+#  "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
+
+
+#-------------------------------------------
+# Push source codes of project-exact-diagonalization to remote
+#-------------------------------------------
+LOCAL_SCRIPTS="${HOME}/academic-project/exact-diagonalization"
+REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/project-exact-diagonalization/"
 
 rsync -avz -e ssh \
   --exclude='**/*.*.tmp.*' \
   --exclude='**/*.*tmp' \
+  --exclude='**/*.git' \
   "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
