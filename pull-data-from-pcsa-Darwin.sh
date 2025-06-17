@@ -24,4 +24,15 @@ rsync -avz -e ssh \
 
 #rsync -avz -e ssh "$REMOTE_SCRIPTS" "$LOCAL_SCRIPTS"
 
+#-------------------------------
+# Sync output data from remote
+#-------------------------------
+REMOTE_OUTPUT="pcsa:/home/pcsa/backup-sync/outputs/"
+LOCAL_OUTPUT="${HOME}/academic-project/outputs/"
+
+rsync -avz -e ssh \
+  --exclude='**/*.*.tmp.*' \
+  --exclude='**/*.*tmp' \
+  "$REMOTE_OUTPUT" "$LOCAL_OUTPUT"
+
 

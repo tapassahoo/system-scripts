@@ -26,17 +26,3 @@ rsync -avz -e ssh \
 #  --exclude='**/*.*.tmp.*' \
 #  --exclude='**/*.*tmp' \
 #  "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
-
-
-#-------------------------------------------
-# Push source codes of project-exact-diagonalization to remote
-#-------------------------------------------
-LOCAL_SCRIPTS="${HOME}/academic-project/exact-diagonalization"
-REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/"
-
-rsync -avz -e ssh \
-  --exclude='**/*.*.tmp.*' \
-  --exclude='**/*.*tmp' \
-  --exclude='**/*.git' \
-  --exclude='**/*output*' \
-  "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
