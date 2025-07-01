@@ -8,13 +8,13 @@ echo -e "\n\n[CRON] Push started at: $(date)"
 #-------------------------------------------
 # Push source codes of project1 to remote
 #-------------------------------------------
-LOCAL_SCRIPTS="${HOME}/academic-project/quantum-chemistry-project/project1/src/structural-analysis/"
-REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/project1/src/structural-analysis/"
+#LOCAL_SCRIPTS="${HOME}/academic-project/quantum-chemistry-project/project1/src/structural-analysis/"
+#REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/project1/src/structural-analysis/"
 
-rsync -avz -e ssh \
-  --exclude='**/*.*.tmp.*' \
-  --exclude='**/*.*tmp' \
-  "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
+#rsync -avz -e ssh \
+#  --exclude='**/*.*.tmp.*' \
+#  --exclude='**/*.*tmp' \
+#  "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
 
 #-------------------------------------------
 # Push source scripts of project2 to remote
@@ -26,3 +26,27 @@ rsync -avz -e ssh \
 #  --exclude='**/*.*.tmp.*' \
 #  --exclude='**/*.*tmp' \
 #  "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
+
+#-------------------------------------------
+# Push source scripts of exact-diagonalization/linear-rotors/python-real-basis-diag/ to remote
+#-------------------------------------------
+LOCAL_SCRIPTS="${HOME}/academic-project/exact-diagonalization/linear-rotors/python-real-basis-diag/submit_rotor_jobs_auto_with_tracking_and_summary.py"
+REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/exact-diagonalization/linear-rotors/python-real-basis-diag/"
+
+rsync -avz -e ssh \
+  --exclude='**/*.*.tmp.*' \
+  --exclude='**/*.*tmp' \
+  --exclude='**/*.*log' \
+  "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
+
+#-------------------------------------------
+# Push source scripts of exact-diagonalization/linear-rotors/python-real-basis-diag/ to remote
+#-------------------------------------------
+LOCAL_SCRIPTS="${HOME}/academic-project/exact-diagonalization/pkg_utils"
+REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/exact-diagonalization/"
+
+rsync -avz -e ssh \
+  --exclude='**/*.*.tmp.*' \
+  --exclude='**/*.*tmp' \
+  --exclude='**/*.*log' \
+  "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
