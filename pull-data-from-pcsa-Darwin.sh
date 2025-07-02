@@ -38,12 +38,12 @@ rsync -avz -e ssh \
 #-------------------------------
 # Sync output data from remote
 #-------------------------------
-REMOTE_OUTPUT="pcsa:/home/pcsa/backup-sync/exact-diagonalization/linear-rotors/python-real-basis-diag/submit_rotor_jobs_auto_with_tracking_and_summary.py"
-LOCAL_OUTPUT="${HOME}/academic-project/exact-diagonalization/linear-rotors/python-real-basis-diag/"
-
-rsync -avz -e ssh \
-  --exclude='**/*.*.tmp.*' \
-  --exclude='**/*.*tmp' \
-  "$REMOTE_OUTPUT" "$LOCAL_OUTPUT"
+#REMOTE_OUTPUT="pcsa:/home/pcsa/backup-sync/exact-diagonalization/linear-rotors/python-real-basis-diag/submit_rotor_jobs_auto_with_tracking_and_summary.py"
+#LOCAL_OUTPUT="${HOME}/academic-project/exact-diagonalization/linear-rotors/python-real-basis-diag/"
+#
+#rsync -avz -e ssh \
+#  --exclude='**/*.*.tmp.*' \
+#  --exclude='**/*.*tmp' \
+#  "$REMOTE_OUTPUT" "$LOCAL_OUTPUT"
 
 

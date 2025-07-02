@@ -50,4 +50,5 @@ rsync -avz -e ssh \
   --exclude='**/*.*tmp' \
   --exclude='**/*.*log' \
   --exclude='**/*.*git' \
+  --exclude='**/*output*' \
   "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
