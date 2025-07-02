@@ -30,23 +30,24 @@ echo -e "\n\n[CRON] Push started at: $(date)"
 #-------------------------------------------
 # Push source scripts of exact-diagonalization/linear-rotors/python-real-basis-diag/ to remote
 #-------------------------------------------
-LOCAL_SCRIPTS="${HOME}/academic-project/exact-diagonalization/linear-rotors/python-real-basis-diag/submit_rotor_jobs_auto_with_tracking_and_summary.py"
-REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/exact-diagonalization/linear-rotors/python-real-basis-diag/"
+#LOCAL_SCRIPTS="${HOME}/academic-project/exact-diagonalization/linear-rotors/python-real-basis-diag/submit_rotor_jobs_auto_with_tracking_and_summary.py"
+#REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/exact-diagonalization/linear-rotors/python-real-basis-diag/"
 
-rsync -avz -e ssh \
-  --exclude='**/*.*.tmp.*' \
-  --exclude='**/*.*tmp' \
-  --exclude='**/*.*log' \
-  "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
+#rsync -avz -e ssh \
+#  --exclude='**/*.*.tmp.*' \
+#  --exclude='**/*.*tmp' \
+#  --exclude='**/*.*log' \
+#  "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
 
 #-------------------------------------------
 # Push source scripts of exact-diagonalization/linear-rotors/python-real-basis-diag/ to remote
 #-------------------------------------------
-LOCAL_SCRIPTS="${HOME}/academic-project/exact-diagonalization/pkg_utils"
+LOCAL_SCRIPTS="${HOME}/academic-project/exact-diagonalization/"
 REMOTE_SCRIPTS="pcsa:/home/pcsa/backup-sync/exact-diagonalization/"
 
 rsync -avz -e ssh \
   --exclude='**/*.*.tmp.*' \
   --exclude='**/*.*tmp' \
   --exclude='**/*.*log' \
+  --exclude='**/*.*git' \
   "$LOCAL_SCRIPTS" "$REMOTE_SCRIPTS"
