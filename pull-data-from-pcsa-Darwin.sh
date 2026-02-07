@@ -10,7 +10,7 @@ set -xv  # Debug mode with verbose output
 #-------------------------------
 REMOTE_OUTPUT="tapas:/home/tapas/academic-project/exact-diagonalization/pkg_monomer_rotor/output/"
 #LOCAL_OUTPUT="${HOME}/academic-project/outputs/"
-LOCAL_OUTPUT="/Volumes/One Touch/pcsa-backup/outputs-of-exeact-diagonalization/"
+LOCAL_OUTPUT="/Volumes/Schrodinger/pcsa-backup/outputs-of-exeact-diagonalization/"
 
 rsync -avz -e ssh \
   --exclude='**/*.*.tmp.*' \
