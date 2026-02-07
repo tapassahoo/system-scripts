@@ -527,3 +527,14 @@ export DICPATH=/usr/share/hunspell
 # ORCA 6.0.1 secion
 export PATH=/Users/tapas/Library/orca_6_0_1:$PATH
 
+eject_schrodinger() {
+  local VOL="/Volumes/Schrodinger"
+  if [ -d "$VOL" ]; then
+    find "$VOL" -name ".DS_Store" -delete
+    find "$VOL" -name "._*" -delete
+    diskutil eject "$VOL"
+  else
+    echo "Drive not mounted."
+  fi
+}
+
