@@ -155,7 +155,7 @@ function acpall () {
   git -C ~/academic-project/teaching_utility_scripts commit -m "$(uname): Updated on $(date +"%d-%m-%Y")"
   git -C ~/academic-project/teaching_utility_scripts push
   echo ""
-  echo "The git directory is ~/academic-project/teaching-support-codes"
+  echo "The git directory is ~/academic-project/teaching_utility_scripts"
   echo "*****************************************************************************"
 #
   git -C ~/academic-project/general-code add .
@@ -276,9 +276,9 @@ function ghall () {
   echo "The git directory is ~/academic-project/code-tester"
   echo "*****************************************************************************"
 #
-  git -C ~/academic-project/teaching-support-codes "$1"
+  git -C ~/academic-project/teaching_utility_scripts "$1"
   echo ""
-  echo "The git directory is ~/academic-project/teaching-support-codes"
+  echo "The git directory is ~/academic-project/teaching_utility_scripts"
   echo "*****************************************************************************"
 #
   git -C ~/academic-project/general-code "$1"
