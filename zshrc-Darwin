@@ -501,7 +501,7 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export DICPATH=/usr/share/hunspell
 
 # ORCA 6.0.1 secion
-export PATH=/Users/tapas/Library/orca_6_1_1:$PATH
+export PATH=/Users/tapas/orca/orca_6_1_1_macosx_intel_openmpi411:$PATH
 
 eject_schrodinger() {
   local VOL="/Volumes/Schrodinger"
